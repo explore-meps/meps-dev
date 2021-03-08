@@ -1,0 +1,28 @@
+# last updated 2021-03-08
+
+# Django packages
+Django==3.0.7 # web server
+djangorestframework==3.11.0 # RESTful API support for Django
+
+# General Support Packages
+ipython==7.16.1 # interactive Python Console
+virtualenvwrapper==4.8.4 # wrapper for simpler virtualenv support
+selenium==3.141.0 # launches and controls a web browser.
+
+# Analytics Packages
+numpy==1.18.5  # scientific compunting support
+pandas==1.0.5 # data analysis library
+
+# Graphing Packages
+seaborn==0.10.01 # graphing support
+matplotlib==3.3.0 # graphing support
+
+# Formatters and Linters
+pycodestyle==2.6.0 # check against some of the style conventions in PEP 8.
+black==19.10b0 # python code formatter
+pyflakes==2.2.0 # checks for errors
+pylint==2.6.0 # linter
+isort==4.3.21 # python import sorter
+pylint-django==2.3.0 # helps pylint with django commands
+pylint-plugin-utils==0.6 # helps pylint with django commands
+

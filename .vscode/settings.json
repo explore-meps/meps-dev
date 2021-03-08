@@ -1,0 +1,58 @@
+{
+    "breadcrumbs.enabled": true,
+    "editor.fontSize": 15,
+    "editor.fontFamily": "Courier New",
+    "editor.minimap.enabled": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.wordWrap": "off",
+    "editor.tabSize": 4,
+    "editor.wordWrapColumn": 119,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "json.format.enable": true,
+    "[json]": {
+        "editor.rulers": [119],
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": false
+    },
+    "[markdown]": {
+        "editor.rulers": [119],
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "markdownlint.run": "onSave",
+    "[python]":{
+        "editor.rulers": [119],
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false,
+    },
+    "python.formatting.blackArgs": [
+        "--line-length", "119", 
+        "--target-version", "py38", 
+        "--formatOnSave", "false",
+        "--indent-size=4"
+    ],
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.sideBar.location": "left",
+    "workbench.tree.indent": 20,
+    "workbench.statusBar.visible": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/.pyc": true,
+        "**/__pycache__": true,
+        "**.sqlite3": true,
+        "**.github": true,
+    },
+    "python.pythonPath": "/home/mike/.virtualenvs/product/bin/python",
+}
