@@ -1,6 +1,7 @@
 from django.core.management.base import BaseCommand
 from meps_dev.components.scrapper import ScrapMEPS
 
+
 class Command(BaseCommand):
     """ Management command to scrap data files from the MEPS site. Run in terminal.
         ex:
@@ -16,7 +17,7 @@ class Command(BaseCommand):
         parser.add_argument("--download_dir", nargs="?", help="declare the path to the download directory")
 
         parser.add_argument("--sleep", nargs="?", type=int, help="declare how many seconds to wait between downloads")
-        
+
     def handle(self, *args, **options):
 
         kwargs = {}

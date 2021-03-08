@@ -39,9 +39,9 @@ FYCDF_PUF_LOOKUP = {
 
 # Full Year Population Characteristics Data Files
 FYPCDF_PUF_LOOKUP = {
-    2018: "h204ssp.zip", 
+    2018: "h204ssp.zip",
     2017: "h194ssp.zip",
-    2016: "h184ssp.zip", 
+    2016: "h184ssp.zip",
     2015: "h174ssp.zip",
     2014: "h165ssp.zip",
     2013: "h157ssp.zip",

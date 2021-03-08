@@ -6,9 +6,9 @@ from os.path import expanduser
 from selenium import webdriver
 
 from meps_dev.components.reference import (
-    DATA_FILES_BASE_URL, 
-    DATA_FILES_YEARS, 
-    FYCDF_PUF_LOOKUP, 
+    DATA_FILES_BASE_URL,
+    DATA_FILES_YEARS,
+    FYCDF_PUF_LOOKUP,
     FYPCDF_PUF_LOOKUP,
     MCDF_PUF_LOOKUP,
     PMDF_PUF_LOOKUP,
@@ -21,6 +21,7 @@ from meps_dev.components.reference import (
     HHDF_PUF_LOOKUP,
 )
 
+
 class ScrapMEPS:
     """ Web scrapper class. Uses Selenium to navigate to the MEPS AHRQ Data files page in browser. Downloads ssp files
     to the specified input file location. Requires a chromedriver associated with the version of chrome running on
@@ -30,7 +31,7 @@ class ScrapMEPS:
     def __init__(self, years=None, download_dir=None, sleep=10):
         """
         Required Inputs:
-            
+            None   
         Optional Inputs:
             years: years to fetch data for (list of ints ex: [2019, 2020])
             download_dir: specify location to store outputted data (str)
@@ -38,7 +39,7 @@ class ScrapMEPS:
                 extensions
         """
 
-        self.years = years if years else DATA_FILES_YEARS 
+        self.years = years if years else DATA_FILES_YEARS
         self.download_dir = download_dir if download_dir else os.path.join(expanduser("~"), "meps", "meps_data")
         self.sleep = sleep
 
@@ -57,7 +58,7 @@ class ScrapMEPS:
         self.get_data_files(folder="outpatient_vists", year_lookup=OVDF_PUF_LOOKUP)
         self.get_data_files(folder="office_based_medical_provider_visits", year_lookup=OBMPVDF_PUF_LOOKUP)
         self.get_data_files(folder="home_health", year_lookup=HHDF_PUF_LOOKUP)
-    
+
     def get_data_files(self, folder, year_lookup):
         """ Takes a folder name and a year to PUF no. lookup. Sets the download directory to the folder name within the
         output directory. Spools up the chromedriver and downloads all files in the years list """
@@ -69,19 +70,19 @@ class ScrapMEPS:
             shutil.rmtree(download_dir)
 
         chrome_options = webdriver.ChromeOptions()
-        prefs = {'download.default_directory': download_dir}
-        chrome_options.add_experimental_option('prefs', prefs)
+        prefs = {"download.default_directory": download_dir}
+        chrome_options.add_experimental_option("prefs", prefs)
         executable_path = os.path.join(os.path.join(expanduser("~"), "meps", "meps_dev", "chromedriver"))
         driver = webdriver.Chrome(executable_path=executable_path, chrome_options=chrome_options)
 
         for year in self.years:
             driver.get(f"{DATA_FILES_BASE_URL}{year_lookup[year]}")
-        
+
         time.sleep(self.sleep)
         driver.close()
 
         self.validate_downloads(download_dir=download_dir, year_lookup=year_lookup, years=self.years)
-    
+
     @staticmethod
     def validate_downloads(download_dir, year_lookup, years):
         """ Takes a download path, a year to PUF no. lookup and the targeted years. Validates that all expected files
@@ -90,9 +91,10 @@ class ScrapMEPS:
 
         downloads = os.listdir(download_dir)
         missing_files = [
-            expected_file for year, expected_file in year_lookup.items() 
-            if year in years
-            and expected_file not in downloads]
+            expected_file
+            for year, expected_file in year_lookup.items()
+            if year in years and expected_file not in downloads
+        ]
 
         if len(missing_files) > 0:
             raise AssertionError(
