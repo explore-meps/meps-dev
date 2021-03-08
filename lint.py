@@ -15,11 +15,11 @@ class LinterFormatter:
 
     def __init__(self):
         """ Defines files and folders to ignore """
-        self.files_to_exclude = {"pylintrc", "pycodestyle", "black", "chromedriver"}
+        self.files_to_exclude = {"pylintrc", "chromedriver", "LICENSE", "manage.py"}
         self.folders_to_exlude = {".git", "__pycache__", "migrations"}
 
     def run_script(self, argv):
-        """ Primary Entry point of MyLinter """
+        """ Primary Entry point of LinterFormatter """
 
         if argv == "lint":
             sources = self.collect_sources()

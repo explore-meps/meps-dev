@@ -2,4 +2,6 @@ from django.apps import AppConfig
 
 
 class ComponentsConfig(AppConfig):
-    name = 'components'
+    """ Configuration of components app"""
+
+    name = "components"
