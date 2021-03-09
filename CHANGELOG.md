@@ -7,7 +7,8 @@ All noteable changes to this project are documented in this file. This project a
 
 Features
 
-- Built ScrapMEPS class and mgmt command for fetching ssp files from the MEPS data center
+- Built ScrapMEPSSSP class and mgmt command for fetching ssp files from the MEPS data center
+- Built ScrapMEPSCodebook class and mgmt command for fetching codebook data from the MEPS data center
 
 Updates:
 

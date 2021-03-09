@@ -33,6 +33,7 @@ from meps_dev.components.reference import (
 )
 from meps_dev.utilities.universal_utilities import UniversalUtilityFunctions
 
+
 class ScrapMEPSSSP:
     """ Web scrapper class. Uses Selenium to navigate to the MEPS AHRQ Data files page in browser. Downloads ssp files
     to the specified input file location. Requires a chromedriver associated with the version of chrome running on
@@ -113,6 +114,7 @@ class ScrapMEPSSSP:
                 f"numbers have been updated"
             )
 
+
 class ScrapMEPSCodebook:
     """ Web scrapper class. Uses Selenium to navigate to the MEPS AHRQ Data files Codebook page in browser. Extracts
     For each variable in a the code book sotres the variable name, description and format. Requires a chromedriver 
@@ -132,7 +134,7 @@ class ScrapMEPSCodebook:
         self.years = years if years else DATA_FILES_YEARS
         self.output_dir = output_dir if output_dir else os.path.join(expanduser("~"), "meps", "meps_data")
         self.sleep = sleep
-    
+
     def run(self):
         """ Primary entry point of ScrapMEPS """
 
@@ -158,7 +160,7 @@ class ScrapMEPSCodebook:
             os.makedirs(output_dir)
 
         executable_path = os.path.join(os.path.join(expanduser("~"), "meps", "meps_dev", "chromedriver"))
-        driver = webdriver.Chrome(executable_path=executable_path)  
+        driver = webdriver.Chrome(executable_path=executable_path)
 
         for year in self.years:
             PUFId = year_lookup[year]
@@ -178,8 +180,8 @@ class ScrapMEPSCodebook:
             vals = table_text[last_header_ind:]
 
             variables = []
-            for field_num in range(int(len(vals)/len(keys))):
-                variables.append(vals[field_num*last_header_ind+0])
+            for field_num in range(int(len(vals) / len(keys))):
+                variables.append(vals[field_num * last_header_ind + 0])
 
             # navigate to each variable page
             codebook = {}
@@ -196,14 +198,13 @@ class ScrapMEPSCodebook:
                 for row in var_table.split("\n"):
                     key_val = row.split(":")
                     variable_dict.update({key_val[0]: key_val[1].strip(" ")})
-                
+
                 # update codebook
                 codebook[variable] = variable_dict
-            
+
             # write to path
             UniversalUtilityFunctions.write_data_to_file(
                 data=codebook,
                 output_file_path=os.path.join(output_dir, f"{PUFId}_codebook"),
-                output_file_format="json"
+                output_file_format="json",
             )
-            
