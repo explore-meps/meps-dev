@@ -20,7 +20,7 @@ DATA_FILES_YEARS = [
 ]
 
 # Full Year Consolidated Data Files
-FYCDF_PUF_LOOKUP = {
+FYCDF_PUF_SSP_LOOKUP = {
     2018: "h209ssp.zip",
     2017: "h201ssp.zip",
     2016: "h192ssp.zip",
@@ -36,9 +36,25 @@ FYCDF_PUF_LOOKUP = {
     2006: "h105ssp.zip",
     2005: "h97ssp.zip",
 }
+FYCDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H209",
+    2017: "H201",
+    2016: "H192",
+    2015: "H181",
+    2014: "H171",
+    2013: "H163",
+    2012: "H155",
+    2011: "H147",
+    2010: "H138",
+    2009: "H129",
+    2008: "H121",
+    2007: "H113",
+    2006: "H105",
+    2005: "H97",
+}
 
 # Full Year Population Characteristics Data Files
-FYPCDF_PUF_LOOKUP = {
+FYPCDF_PUF_SSP_LOOKUP = {
     2018: "h204ssp.zip",
     2017: "h194ssp.zip",
     2016: "h184ssp.zip",
@@ -54,9 +70,25 @@ FYPCDF_PUF_LOOKUP = {
     2006: "h105ssp.zip",
     2005: "h97ssp.zip",
 }
+FYPCDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H204",
+    2017: "H194",
+    2016: "H184",
+    2015: "H174",
+    2014: "H165",
+    2013: "H157",
+    2012: "H149",
+    2011: "H141",
+    2010: "H132",
+    2009: "H123",
+    2008: "H115",
+    2007: "H113",
+    2006: "H105",
+    2005: "H97",
+}
 
 # Medical Conditions Data Files
-MCDF_PUF_LOOKUP = {
+MCDF_PUF_SSP_LOOKUP = {
     2018: "h207ssp.zip",
     2017: "h199ssp.zip",
     2016: "h190ssp.zip",
@@ -72,9 +104,25 @@ MCDF_PUF_LOOKUP = {
     2006: "h104ssp.zip",
     2005: "h96ssp.zip",
 }
+MCDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H207",
+    2017: "H199",
+    2016: "H190",
+    2015: "H180",
+    2014: "H170",
+    2013: "H162",
+    2012: "H154",
+    2011: "H146",
+    2010: "H137",
+    2009: "H128",
+    2008: "H120",
+    2007: "H112",
+    2006: "H104",
+    2005: "H96",
+}
 
 # Prescribed Medicines Data Files
-PMDF_PUF_LOOKUP = {
+PMDF_PUF_SSP_LOOKUP = {
     2018: "h206assp.zip",
     2017: "h197assp.zip",
     2016: "h188assp.zip",
@@ -90,9 +138,25 @@ PMDF_PUF_LOOKUP = {
     2006: "h102assp.zip",
     2005: "h94assp.zip",
 }
+PMDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H206A",
+    2017: "H197A",
+    2016: "H188A",
+    2015: "H178A",
+    2014: "H168A",
+    2013: "H160A",
+    2012: "H152A",
+    2011: "H144A",
+    2010: "H135A",
+    2009: "H126A",
+    2008: "H118A",
+    2007: "H110A",
+    2006: "H102A",
+    2005: "H94A",
+}
 
 # Dental Visits Data Files
-DVDF_PUF_LOOKUP = {
+DVDF_PUF_SSP_LOOKUP = {
     2018: "h206bssp.zip",
     2017: "h197bssp.zip",
     2016: "h188bssp.zip",
@@ -108,9 +172,26 @@ DVDF_PUF_LOOKUP = {
     2006: "h102bssp.zip",
     2005: "h94bssp.zip",
 }
+DVDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H206B",
+    2017: "H197B",
+    2016: "H188B",
+    2015: "H178B",
+    2014: "H168B",
+    2013: "H160B",
+    2012: "H152B",
+    2011: "H144B",
+    2010: "H135B",
+    2009: "H126B",
+    2008: "H118B",
+    2007: "H110B",
+    2006: "H102B",
+    2005: "H94B",
+}
+
 
 # Other Medical Expenses Data Files
-OMEDF_PUF_LOOKUP = {
+OMEDF_PUF_SSP_LOOKUP = {
     2018: "h206cssp.zip",
     2017: "h197cssp.zip",
     2016: "h188cssp.zip",
@@ -126,9 +207,26 @@ OMEDF_PUF_LOOKUP = {
     2006: "h102cssp.zip",
     2005: "h94cssp.zip",
 }
+OMEDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H206C",
+    2017: "H197C",
+    2016: "H188C",
+    2015: "H178C",
+    2014: "H168C",
+    2013: "H160C",
+    2012: "H152C",
+    2011: "H144C",
+    2010: "H135C",
+    2009: "H126C",
+    2008: "H118C",
+    2007: "H110C",
+    2006: "H102C",
+    2005: "H94C",
+}
+
 
 # Hospital Inpatient Stays Data Files
-HISDF_PUF_LOOKUP = {
+HISDF_PUF_SSP_LOOKUP = {
     2018: "h206dssp.zip",
     2017: "h197dssp.zip",
     2016: "h188dssp.zip",
@@ -144,9 +242,26 @@ HISDF_PUF_LOOKUP = {
     2006: "h102dssp.zip",
     2005: "h94dssp.zip",
 }
+HISDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H206D",
+    2017: "H197D",
+    2016: "H188D",
+    2015: "H178D",
+    2014: "H168D",
+    2013: "H160D",
+    2012: "H152D",
+    2011: "H144D",
+    2010: "H135D",
+    2009: "H126D",
+    2008: "H118D",
+    2007: "H110D",
+    2006: "H102D",
+    2005: "H94D",
+}
+
 
 # Emergency Room Visits Data Files
-ERVDF_PUF_LOOKUP = {
+ERVDF_PUF_SSP_LOOKUP = {
     2018: "h206essp.zip",
     2017: "h197essp.zip",
     2016: "h188essp.zip",
@@ -162,9 +277,26 @@ ERVDF_PUF_LOOKUP = {
     2006: "h102essp.zip",
     2005: "h94essp.zip",
 }
+ERVDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H206E",
+    2017: "H197E",
+    2016: "H188E",
+    2015: "H178E",
+    2014: "H168E",
+    2013: "H160E",
+    2012: "H152E",
+    2011: "H144E",
+    2010: "H135E",
+    2009: "H126E",
+    2008: "H118E",
+    2007: "H110E",
+    2006: "H102E",
+    2005: "H94E",
+}
+
 
 # Outpatient Visits Data Files
-OVDF_PUF_LOOKUP = {
+OVDF_PUF_SSP_LOOKUP = {
     2018: "h206fssp.zip",
     2017: "h197fssp.zip",
     2016: "h188fssp.zip",
@@ -180,9 +312,26 @@ OVDF_PUF_LOOKUP = {
     2006: "h102fssp.zip",
     2005: "h94fssp.zip",
 }
+OVDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H206F",
+    2017: "H197F",
+    2016: "H188F",
+    2015: "H178F",
+    2014: "H168F",
+    2013: "H160F",
+    2012: "H152F",
+    2011: "H144F",
+    2010: "H135F",
+    2009: "H126F",
+    2008: "H118F",
+    2007: "H110F",
+    2006: "H102F",
+    2005: "H94F",
+}
+
 
 # Office-Based Medical Provider Visits Data Files
-OBMPVDF_PUF_LOOKUP = {
+OBMPVDF_PUF_SSP_LOOKUP = {
     2018: "h206gssp.zip",
     2017: "h197gssp.zip",
     2016: "h188gssp.zip",
@@ -198,9 +347,26 @@ OBMPVDF_PUF_LOOKUP = {
     2006: "h102gssp.zip",
     2005: "h94gssp.zip",
 }
+OBMPVDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H206G",
+    2017: "H197G",
+    2016: "H188G",
+    2015: "H178G",
+    2014: "H168G",
+    2013: "H160G",
+    2012: "H152G",
+    2011: "H144G",
+    2010: "H135G",
+    2009: "H126G",
+    2008: "H118G",
+    2007: "H110G",
+    2006: "H102G",
+    2005: "H94G",
+}
+
 
 # Home Health Data Files
-HHDF_PUF_LOOKUP = {
+HHDF_PUF_SSP_LOOKUP = {
     2018: "h206hssp.zip",
     2017: "h197hssp.zip",
     2016: "h188hssp.zip",
@@ -215,4 +381,20 @@ HHDF_PUF_LOOKUP = {
     2007: "h110hssp.zip",
     2006: "h102hssp.zip",
     2005: "h94hssp.zip",
+}
+HHDF_PUF_CODEBOOK_LOOKUP = {
+    2018: "H206H",
+    2017: "H197H",
+    2016: "H188H",
+    2015: "H178H",
+    2014: "H168H",
+    2013: "H160H",
+    2012: "H152H",
+    2011: "H144H",
+    2010: "H135H",
+    2009: "H126H",
+    2008: "H118H",
+    2007: "H110H",
+    2006: "H102H",
+    2005: "H94H",
 }
