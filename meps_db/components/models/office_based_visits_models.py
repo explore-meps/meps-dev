@@ -9,7 +9,7 @@ class OfficeBasedVisits18(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits18"
 
     DUID = models.CharField("PANEL # + ENCRYPTED DU IDENTIFIER", max_length=7)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -73,7 +73,7 @@ class OfficeBasedVisits17(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits17"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -139,7 +139,7 @@ class OfficeBasedVisits16(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits16"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -208,7 +208,7 @@ class OfficeBasedVisits15(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits15"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -281,7 +281,7 @@ class OfficeBasedVisits14(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits14"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -354,7 +354,7 @@ class OfficeBasedVisits13(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits13"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -427,7 +427,7 @@ class OfficeBasedVisits12(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits12"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -519,7 +519,7 @@ class OfficeBasedVisits11(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits11"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -611,7 +611,7 @@ class OfficeBasedVisits10(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits10"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -703,7 +703,7 @@ class OfficeBasedVisits09(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits09"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -795,7 +795,7 @@ class OfficeBasedVisits08(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits08"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -887,7 +887,7 @@ class OfficeBasedVisits07(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits07"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -980,7 +980,7 @@ class OfficeBasedVisits06(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits06"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -1073,7 +1073,7 @@ class OfficeBasedVisits05(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OfficeBasedVisits"
+        verbose_name_plural = "OfficeBasedVisits05"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)

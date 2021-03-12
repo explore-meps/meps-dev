@@ -9,7 +9,7 @@ class HomeHealth18(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth18"
 
     DUID = models.CharField("PANEL # + ENCRYPTED DU IDENTIFIER", max_length=7)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -81,7 +81,7 @@ class HomeHealth17(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth17"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -150,7 +150,7 @@ class HomeHealth16(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth16"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -235,7 +235,7 @@ class HomeHealth15(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth15"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -320,7 +320,7 @@ class HomeHealth14(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth14"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -405,7 +405,7 @@ class HomeHealth13(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth13"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -490,7 +490,7 @@ class HomeHealth12(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth12"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -575,7 +575,7 @@ class HomeHealth11(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth11"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -660,7 +660,7 @@ class HomeHealth10(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth10"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -745,7 +745,7 @@ class HomeHealth09(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth09"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -830,7 +830,7 @@ class HomeHealth08(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth08"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -915,7 +915,7 @@ class HomeHealth07(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth07"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -1000,7 +1000,7 @@ class HomeHealth06(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth06"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=2)
@@ -1085,7 +1085,7 @@ class HomeHealth05(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HomeHealth"
+        verbose_name_plural = "HomeHealth05"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)

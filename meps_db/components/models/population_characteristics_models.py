@@ -9,7 +9,7 @@ class PopulationCharacteristics18(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics18"
 
     DUID = models.CharField("PANEL # + ENCRYPTED DU IDENTIFIER", max_length=7)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -996,7 +996,7 @@ class PopulationCharacteristics17(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics17"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -1949,7 +1949,7 @@ class PopulationCharacteristics16(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics16"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -3038,7 +3038,7 @@ class PopulationCharacteristics15(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics15"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -4125,7 +4125,7 @@ class PopulationCharacteristics14(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics14"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -5223,7 +5223,7 @@ class PopulationCharacteristics13(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics13"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -6368,7 +6368,7 @@ class PopulationCharacteristics12(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics12"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -7549,7 +7549,7 @@ class PopulationCharacteristics11(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics11"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -8726,7 +8726,7 @@ class PopulationCharacteristics10(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics10"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -9865,7 +9865,7 @@ class PopulationCharacteristics09(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics09"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -11093,7 +11093,7 @@ class PopulationCharacteristics08(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics08"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -12265,7 +12265,7 @@ class PopulationCharacteristics07(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics07"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -14062,7 +14062,7 @@ class PopulationCharacteristics06(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics06"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -15751,7 +15751,7 @@ class PopulationCharacteristics05(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "PopulationCharacteristics"
+        verbose_name_plural = "PopulationCharacteristics05"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)

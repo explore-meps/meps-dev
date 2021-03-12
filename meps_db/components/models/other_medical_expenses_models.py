@@ -9,7 +9,7 @@ class OtherMedicalExpenses18(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses18"
 
     DUID = models.CharField("PANEL # + ENCRYPTED DU IDENTIFIER", max_length=7)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -51,7 +51,7 @@ class OtherMedicalExpenses17(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses17"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -96,7 +96,7 @@ class OtherMedicalExpenses16(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses16"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -143,7 +143,7 @@ class OtherMedicalExpenses15(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses15"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -190,7 +190,7 @@ class OtherMedicalExpenses14(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses14"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -239,7 +239,7 @@ class OtherMedicalExpenses13(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses13"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -288,7 +288,7 @@ class OtherMedicalExpenses12(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses12"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -336,7 +336,7 @@ class OtherMedicalExpenses11(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses11"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -384,7 +384,7 @@ class OtherMedicalExpenses10(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses10"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -432,7 +432,7 @@ class OtherMedicalExpenses09(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses09"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -480,7 +480,7 @@ class OtherMedicalExpenses08(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses08"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -528,7 +528,7 @@ class OtherMedicalExpenses07(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses07"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -576,7 +576,7 @@ class OtherMedicalExpenses06(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses06"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -625,7 +625,7 @@ class OtherMedicalExpenses05(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "OtherMedicalExpenses"
+        verbose_name_plural = "OtherMedicalExpenses05"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
