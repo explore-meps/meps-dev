@@ -23,7 +23,7 @@ from meps_db.components.reference import (
 class BaseComponentsPopulator:
     """ Base class for associated populator classes. Contains common elements that can be used by inheriting classes
     """
-    
+
     @staticmethod
     def get_meps_folder_dir(folder):
         """ Takes a folder name, returns the base meps data folder directory """
@@ -33,19 +33,19 @@ class BaseComponentsPopulator:
     def get_zip_path(cls, folder, year, year_lookup):
         """ Takes a folder name, a year, and the year lookup dictionary. Returns the full path to the zipped dat file
         """
-        return os.path.join(cls.get_meps_folder_dir(folder),f"{year_lookup[year]}dat.zip")
-    
+        return os.path.join(cls.get_meps_folder_dir(folder), f"{year_lookup[year]}dat.zip")
+
     @classmethod
     def get_txt_path(cls, folder, year, year_lookup):
         """ Takes a folder name, a year, and the year lookup dictionary. Returns the full path to the sas txt file
         """
-        return os.path.join(cls.get_meps_folder_dir(folder),f"{year_lookup[year]}su.txt")
+        return os.path.join(cls.get_meps_folder_dir(folder), f"{year_lookup[year]}su.txt")
 
     @classmethod
     def get_variable_parameters_path(cls, folder, year, year_lookup):
         """ Takes a folder name, a year, and the year lookup dictionary. Returns the full path to the variable 
         parameters json """
-        return os.path.join(cls.get_meps_folder_dir(folder),f"{year_lookup[year]}_parameters.json")
+        return os.path.join(cls.get_meps_folder_dir(folder), f"{year_lookup[year]}_parameters.json")
 
     @staticmethod
     def parse_ascii(ascii_text, sas_text):
@@ -69,22 +69,22 @@ class BaseComponentsPopulator:
                 {
                     "name": split_row[1],
                     "start": int(float(split_row[0].strip("@"))),
-                    "size": int(float(split_row[2].strip("$")))
+                    "size": int(float(split_row[2].strip("$"))),
                 }
             )
-        
+
         # extract ascii text
         respondents_dict = []
         row_data = ascii_text.decode("utf-8").split("\r\n")
-        for row in row_data[:-1]: # last row is always empty
+        for row in row_data[:-1]:  # last row is always empty
             respondent_dict = {}
             for var_dict in variable_location_lookup:
                 # SAS starts lists on 1, python on 0
-                val = row[var_dict["start"]-1:var_dict["start"]-1+var_dict["size"]].strip()
+                val = row[var_dict["start"] - 1 : var_dict["start"] - 1 + var_dict["size"]].strip()
                 respondent_dict.update({var_dict["name"]: val})
-            
+
             respondents_dict.append(respondent_dict)
-        
+
         return respondents_dict
 
     @staticmethod
@@ -104,11 +104,11 @@ class BaseComponentsPopulator:
                 continue
             split_row = row.strip("LABEL").split("=")
             variable_parameters[split_row[0].strip()] = {"description": split_row[1].replace("'", "")}
-        
+
         for var, var_dict in variable_parameters.items():
             values = [len(resp[var]) for resp in respondents_dict]
             var_dict.update({"min": min(values), "max": max(values)})
-        
+
         return variable_parameters
 
     @classmethod
@@ -124,9 +124,9 @@ class BaseComponentsPopulator:
         zipped_filename = zip_path.split("/")[-1]
         unzip_path = zip_path.replace(zipped_filename, "")
 
-        with ZipFile(zip_path,"r") as zip_ref:
+        with ZipFile(zip_path, "r") as zip_ref:
             zip_ref.extractall(unzip_path)
-        
+
         unzipped_filename = zipped_filename.split("dat.zip")[0]
 
         # load ascii data, files unpack in somewhat arbitrary format
@@ -134,19 +134,19 @@ class BaseComponentsPopulator:
         for potential_path in [
             os.path.join(unzip_path, f"{unzipped_filename}.dat"),
             os.path.join(unzip_path, f"{unzipped_filename.upper()}.DAT"),
-            os.path.join(unzip_path, f"{unzipped_filename.upper()}.dat")
+            os.path.join(unzip_path, f"{unzipped_filename.upper()}.dat"),
         ]:
             if os.path.exists(potential_path):
-                with open(potential_path, 'rb') as f:
+                with open(potential_path, "rb") as f:
                     ascii_text = f.read()
-        
+
         if not ascii_text:
             raise ValueError("No .dat file associated with {unzipped_filename}")
 
         # load SAS data
-        with open(txt_path, 'r') as f:
+        with open(txt_path, "r") as f:
             sas_text = f.read()
-        
+
         respondents_dict = cls.parse_ascii(ascii_text=ascii_text, sas_text=sas_text)
         variable_parameters = cls.get_variable_parameters(sas_text=sas_text, respondents_dict=respondents_dict)
 
@@ -181,14 +181,12 @@ class ComponentPopulator(BaseComponentsPopulator):
         }
 
         assert self.data_type in self.data_map
-    
+
     def run(self):
         """ Primary Entry point of FYCDFPopulator """
 
         respondents_dict, variable_parameters = self.unpack_data(
-            folder=self.data_type, 
-            year=self.year, 
-            year_lookup=self.data_map[self.data_type]
+            folder=self.data_type, year=self.year, year_lookup=self.data_map[self.data_type]
         )
 
         # handle edge where the 2011 FYCDF contains more than 2000 columns, remove fields related to the CSAQ survey
@@ -207,9 +205,7 @@ class ComponentPopulator(BaseComponentsPopulator):
             self.get_meps_folder_dir(folder=self.data_type), f"{self.data_map[self.data_type][self.year]}_parameters"
         )
         util.write_data_to_file(
-            data=variable_parameters,
-            output_file_path=variable_parameters_path,
-            output_file_format="json"
+            data=variable_parameters, output_file_path=variable_parameters_path, output_file_format="json"
         )
 
         return respondents_dict

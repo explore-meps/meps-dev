@@ -9,6 +9,10 @@ Features
 
 - Built ScrapMEPSSSP class and mgmt command for fetching ssp files from the MEPS data center
 - Built ScrapMEPSCodebook class and mgmt command for fetching codebook data from the MEPS data center
+- Rebuilt ScrapMEPSSSP as ScrapMEPS, now fetches .dat files and associated SAS .txt files
+- Built ComponentPopulator, extracts ascii text from .dat files and orders according to the associated SAS .txt files
+- Built SQLite3 table which contains all models associated with an .dat file
+- Built model populating and depopulating management commands
 
 Updates:
 

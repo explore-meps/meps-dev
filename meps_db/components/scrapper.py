@@ -80,7 +80,7 @@ class ScrapMEPS:
             driver.get(f"{DATA_FILES_BASE_URL}{year_lookup[year]}dat.zip")
             driver.get(f"{DATA_STATS_BASE_URL}{year_lookup[year]}/{year_lookup[year]}su.txt")
             text = driver.find_element_by_css_selector("body > pre").text
-            with open(f"{download_dir}/{year_lookup[year]}su.txt", 'w') as f:
+            with open(f"{download_dir}/{year_lookup[year]}su.txt", "w") as f:
                 f.write(text)
 
         time.sleep(self.sleep)
@@ -102,7 +102,7 @@ class ScrapMEPS:
                     missing_files.append(f"{puf_no}dat.zip")
                 if f"{puf_no}su.txt" not in downloads:
                     missing_files.append(f"{puf_no}dat.zip")
-       
+
         if len(missing_files) > 0:
             raise AssertionError(
                 f"The following files were not able to be fetched {', '.join(missing_files)} check if the PUF "

@@ -207,64 +207,60 @@ class Command(BaseCommand):
         parser.add_argument(
             "--models", nargs="*", help="declare specific table to populate with like 'PrescribedMedicines'",
         )
-    
+
     def handle(self, *args, **options):
 
         model_params_dict = {
             "DentalVisits": {
                 "populator": ComponentPopulator,
                 "data_type": "dental_visits",
-                "object_name": "DentalVisits"
+                "object_name": "DentalVisits",
             },
             "EmergencyRoomVisits": {
                 "populator": ComponentPopulator,
                 "data_type": "emergency_room_visits",
-                "object_name": "EmergencyRoomVisits"
+                "object_name": "EmergencyRoomVisits",
             },
             "FullYearConsolidated": {
                 "populator": ComponentPopulator,
                 "data_type": "consolidated",
-                "object_name": "FullYearConsolidated"
+                "object_name": "FullYearConsolidated",
             },
-            "HomeHealth": {
-                "populator": ComponentPopulator,
-                "data_type": "home_health",
-                "object_name": "HomeHealth"
-            },
+            "HomeHealth": {"populator": ComponentPopulator, "data_type": "home_health", "object_name": "HomeHealth"},
             "HospitalInpatientStays": {
                 "populator": ComponentPopulator,
                 "data_type": "hospital_inpatient_stays",
-                "object_name": "HospitalInpatientStays"
+                "object_name": "HospitalInpatientStays",
             },
             "MedicalConditions": {
                 "populator": ComponentPopulator,
                 "data_type": "medical_conditions",
-                "object_name": "MedicalConditions"
+                "object_name": "MedicalConditions",
             },
             "OfficeBasedVisits": {
                 "populator": ComponentPopulator,
                 "data_type": "office_based_visits",
-                "object_name": "OfficeBasedVisits"
+                "object_name": "OfficeBasedVisits",
             },
             "OtherMedicalExpenses": {
                 "populator": ComponentPopulator,
                 "data_type": "other_medical_expenses",
-                "object_name": "OtherMedicalExpenses"
+                "object_name": "OtherMedicalExpenses",
             },
             "OutpatientVisits": {
                 "populator": ComponentPopulator,
                 "data_type": "outpatient_visits",
-                "object_name": "OutpatientVisits"
+                "object_name": "OutpatientVisits",
             },
             "PopulationCharacteristics": {
                 "populator": ComponentPopulator,
                 "data_type": "population_characteristics",
-                "object_name": "PopulationCharacteristics"
+                "object_name": "PopulationCharacteristics",
             },
             "PrescribedMedicines": {
                 "populator": ComponentPopulator,
                 "data_type": "prescribed_medicines",
-                "object_name": "PrescribedMedicines"
+                "object_name": "PrescribedMedicines",
             },
         }
 
@@ -281,7 +277,7 @@ class Command(BaseCommand):
         self.populate(
             years=years, model_list=model_list, model_params_dict=model_params_dict, options=options,
         )
-    
+
     def populate(self, years, model_list, model_params_dict, options):
         """ Takes a list of year, a list of models and a reference dictionary associated with each model. Populates
         the all models within the list of years """
@@ -303,7 +299,7 @@ class Command(BaseCommand):
                 2006: DentalVisits06,
                 2005: DentalVisits05,
             },
-            "EmergencyRoomVisits":{
+            "EmergencyRoomVisits": {
                 2018: EmergencyRoomVisits18,
                 2017: EmergencyRoomVisits17,
                 2016: EmergencyRoomVisits16,
@@ -319,7 +315,7 @@ class Command(BaseCommand):
                 2006: EmergencyRoomVisits06,
                 2005: EmergencyRoomVisits05,
             },
-            "FullYearConsolidated":{
+            "FullYearConsolidated": {
                 2018: FullYearConsolidated18,
                 2017: FullYearConsolidated17,
                 2016: FullYearConsolidated16,
@@ -335,7 +331,7 @@ class Command(BaseCommand):
                 2006: FullYearConsolidated06,
                 2005: FullYearConsolidated05,
             },
-            "HomeHealth":{
+            "HomeHealth": {
                 2018: HomeHealth18,
                 2017: HomeHealth17,
                 2016: HomeHealth16,
@@ -351,7 +347,7 @@ class Command(BaseCommand):
                 2006: HomeHealth06,
                 2005: HomeHealth05,
             },
-            "HospitalInpatientStays":{
+            "HospitalInpatientStays": {
                 2018: HospitalInpatientStays18,
                 2017: HospitalInpatientStays17,
                 2016: HospitalInpatientStays16,
@@ -367,7 +363,7 @@ class Command(BaseCommand):
                 2006: HospitalInpatientStays06,
                 2005: HospitalInpatientStays05,
             },
-            "MedicalConditions":{
+            "MedicalConditions": {
                 2018: MedicalConditions18,
                 2017: MedicalConditions17,
                 2016: MedicalConditions16,
@@ -383,7 +379,7 @@ class Command(BaseCommand):
                 2006: MedicalConditions06,
                 2005: MedicalConditions05,
             },
-            "OfficeBasedVisits":{
+            "OfficeBasedVisits": {
                 2018: OfficeBasedVisits18,
                 2017: OfficeBasedVisits17,
                 2016: OfficeBasedVisits16,
@@ -399,7 +395,7 @@ class Command(BaseCommand):
                 2006: OfficeBasedVisits06,
                 2005: OfficeBasedVisits05,
             },
-            "OtherMedicalExpenses":{
+            "OtherMedicalExpenses": {
                 2018: OtherMedicalExpenses18,
                 2017: OtherMedicalExpenses17,
                 2016: OtherMedicalExpenses16,
@@ -415,7 +411,7 @@ class Command(BaseCommand):
                 2006: OtherMedicalExpenses06,
                 2005: OtherMedicalExpenses05,
             },
-            "OutpatientVisits":{
+            "OutpatientVisits": {
                 2018: OutpatientVisits18,
                 2017: OutpatientVisits17,
                 2016: OutpatientVisits16,
@@ -431,7 +427,7 @@ class Command(BaseCommand):
                 2006: OutpatientVisits06,
                 2005: OutpatientVisits05,
             },
-            "PopulationCharacteristics":{
+            "PopulationCharacteristics": {
                 2018: PopulationCharacteristics18,
                 2017: PopulationCharacteristics17,
                 2016: PopulationCharacteristics16,
@@ -447,7 +443,7 @@ class Command(BaseCommand):
                 2006: PopulationCharacteristics06,
                 2005: PopulationCharacteristics05,
             },
-            "PrescribedMedicines":{
+            "PrescribedMedicines": {
                 2018: PrescribedMedicines18,
                 2017: PrescribedMedicines17,
                 2016: PrescribedMedicines16,
