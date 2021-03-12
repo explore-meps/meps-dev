@@ -41,6 +41,12 @@ class BaseComponentsPopulator:
         """
         return os.path.join(cls.get_meps_folder_dir(folder),f"{year_lookup[year]}su.txt")
 
+    @classmethod
+    def get_variable_parameters_path(cls, folder, year, year_lookup):
+        """ Takes a folder name, a year, and the year lookup dictionary. Returns the full path to the variable 
+        parameters json """
+        return os.path.join(cls.get_meps_folder_dir(folder),f"{year_lookup[year]}_parameters.json")
+
     @staticmethod
     def parse_ascii(ascii_text, sas_text):
         """ Takes an ascii text string and sas statement text. Identifies where input statements begin and end in the
@@ -170,7 +176,7 @@ class ComponentPopulator(BaseComponentsPopulator):
             "hospital_inpatient_stays": HISDF_PUF_LOOKUP,
             "emergency_room_visits": ERVDF_PUF_LOOKUP,
             "outpatient_visits": OVDF_PUF_LOOKUP,
-            "office_based_medical_provider_visits": OBMPVDF_PUF_LOOKUP,
+            "office_based_visits": OBMPVDF_PUF_LOOKUP,
             "home_health": HHDF_PUF_LOOKUP,
         }
 
@@ -184,6 +190,19 @@ class ComponentPopulator(BaseComponentsPopulator):
             year=self.year, 
             year_lookup=self.data_map[self.data_type]
         )
+
+        # handle edge where the 2011 FYCDF contains more than 2000 columns, remove fields related to the CSAQ survey
+        if self.data_type == "consolidated" and self.year == 2011:
+            # fields to pop
+            fields_to_pop = []
+            for var, var_dict in variable_parameters.items():
+                if "CSAQ:" in var_dict["description"]:
+                    fields_to_pop.append(var)
+
+            for resp_dict in respondents_dict:
+                for field in fields_to_pop:
+                    resp_dict.pop(field)
+
         variable_parameters_path = os.path.join(
             self.get_meps_folder_dir(folder=self.data_type), f"{self.data_map[self.data_type][self.year]}_parameters"
         )

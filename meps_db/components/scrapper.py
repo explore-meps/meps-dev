@@ -57,7 +57,7 @@ class ScrapMEPS:
         self.get_data_files(folder="hospital_inpatient_stays", year_lookup=HISDF_PUF_LOOKUP)
         self.get_data_files(folder="emergency_room_visits", year_lookup=ERVDF_PUF_LOOKUP)
         self.get_data_files(folder="outpatient_visits", year_lookup=OVDF_PUF_LOOKUP)
-        self.get_data_files(folder="office_based_medical_provider_visits", year_lookup=OBMPVDF_PUF_LOOKUP)
+        self.get_data_files(folder="office_based_visits", year_lookup=OBMPVDF_PUF_LOOKUP)
         self.get_data_files(folder="home_health", year_lookup=HHDF_PUF_LOOKUP)
 
     def get_data_files(self, folder, year_lookup):

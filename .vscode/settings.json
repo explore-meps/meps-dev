@@ -51,7 +51,7 @@
         "**/.DS_Store": true,
         "**/.pyc": true,
         "**/__pycache__": true,
-        "**.sqlite3": true,
+        "**.sqlite3": false,
         "**.github": true,
     },
     "python.pythonPath": "/home/mike/.virtualenvs/product/bin/python",

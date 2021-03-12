@@ -20,6 +20,10 @@ DATA_FILES_YEARS = [
     2005,
 ]
 
+BASE_MODELS = [
+    "PrescribedMedicine"
+]
+
 # Full Year Consolidated Data Files
 FYCDF_PUF_LOOKUP = {
     2018: "h209",
