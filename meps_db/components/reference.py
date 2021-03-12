@@ -21,7 +21,17 @@ DATA_FILES_YEARS = [
 ]
 
 BASE_MODELS = [
-    "PrescribedMedicine"
+    "DentalVisits",
+    "EmergencyRoomVisits",
+    "FullYearConsolidated",
+    "HomeHealth",
+    "HospitalInpatientStays",
+    "MedicalConditions",
+    "OfficeBasedVisits",
+    "OtherMedicalExpenses",
+    "OutpatientVisits",
+    "PopulationCharacteristics",
+    "PrescribedMedicines",
 ]
 
 # Full Year Consolidated Data Files

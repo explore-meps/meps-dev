@@ -1,7 +1,7 @@
 from django.core.management.base import BaseCommand
 
-from meps_db.components.populators import ComponentPopulator
 from meps_db.components.reference import DATA_FILES_YEARS, BASE_MODELS
+
 
 from meps_db.components.models.dental_visits_models import (
     DentalVisits18,
@@ -192,13 +192,13 @@ from meps_db.components.models.prescribed_medicines_models import (
 
 
 class Command(BaseCommand):
-    """ Management command to populate components models. Run in terminal.
+    """ Management command to depopulate components data models. Run in terminal.
         ex:
-            python manage.py populate_components
-            python manage.py populate_components --years "2016" "2017" --models "PrescribedMedicines"
+            python manage.py depopulate_components
+            python manage.py depopulate_components --years 2016 --models "DentalVisits"
     """
 
-    help = "Populates the component models"
+    help = "Depopulates the component models"
 
     def add_arguments(self, parser):
         parser.add_argument(
@@ -207,84 +207,8 @@ class Command(BaseCommand):
         parser.add_argument(
             "--models", nargs="*", help="declare specific table to populate with like 'PrescribedMedicines'",
         )
-    
+
     def handle(self, *args, **options):
-
-        model_params_dict = {
-            "DentalVisits": {
-                "populator": ComponentPopulator,
-                "data_type": "dental_visits",
-                "object_name": "DentalVisits"
-            },
-            "EmergencyRoomVisits": {
-                "populator": ComponentPopulator,
-                "data_type": "emergency_room_visits",
-                "object_name": "EmergencyRoomVisits"
-            },
-            "FullYearConsolidated": {
-                "populator": ComponentPopulator,
-                "data_type": "consolidated",
-                "object_name": "FullYearConsolidated"
-            },
-            "HomeHealth": {
-                "populator": ComponentPopulator,
-                "data_type": "home_health",
-                "object_name": "HomeHealth"
-            },
-            "HospitalInpatientStays": {
-                "populator": ComponentPopulator,
-                "data_type": "hospital_inpatient_stays",
-                "object_name": "HospitalInpatientStays"
-            },
-            "MedicalConditions": {
-                "populator": ComponentPopulator,
-                "data_type": "medical_conditions",
-                "object_name": "MedicalConditions"
-            },
-            "OfficeBasedVisits": {
-                "populator": ComponentPopulator,
-                "data_type": "office_based_visits",
-                "object_name": "OfficeBasedVisits"
-            },
-            "OtherMedicalExpenses": {
-                "populator": ComponentPopulator,
-                "data_type": "other_medical_expenses",
-                "object_name": "OtherMedicalExpenses"
-            },
-            "OutpatientVisits": {
-                "populator": ComponentPopulator,
-                "data_type": "outpatient_visits",
-                "object_name": "OutpatientVisits"
-            },
-            "PopulationCharacteristics": {
-                "populator": ComponentPopulator,
-                "data_type": "population_characteristics",
-                "object_name": "PopulationCharacteristics"
-            },
-            "PrescribedMedicines": {
-                "populator": ComponentPopulator,
-                "data_type": "prescribed_medicines",
-                "object_name": "PrescribedMedicines"
-            },
-        }
-
-        if options["years"] is None:
-            years = DATA_FILES_YEARS
-        else:
-            years = options["years"]
-
-        if options["models"] is None:
-            model_list = BASE_MODELS
-        else:
-            model_list = [model for model in options["models"] if model in BASE_MODELS]
-
-        self.populate(
-            years=years, model_list=model_list, model_params_dict=model_params_dict, options=options,
-        )
-    
-    def populate(self, years, model_list, model_params_dict, options):
-        """ Takes a list of year, a list of models and a reference dictionary associated with each model. Populates
-        the all models within the list of years """
 
         MODEL_LOOKUP = {
             "DentalVisits": {
@@ -465,23 +389,26 @@ class Command(BaseCommand):
             },
         }
 
-        for year in years:
-            for model_key in model_list:
-                populator_class = model_params_dict[model_key]["populator"](
-                    year=year, data_type=model_params_dict[model_key]["data_type"]
-                )
-                obj_list = populator_class.run()
+        if options["years"] is None:
+            years = DATA_FILES_YEARS
+        else:
+            years = options["years"]
 
-                # look up model based on model key and year
+        if options["models"] is None:
+            model_list = BASE_MODELS
+        else:
+            model_list = [model for model in options["models"] if model in BASE_MODELS]
+
+        for model_key in model_list:
+            for year in years:
                 model = MODEL_LOOKUP[model_key][year]
-
-                model_objs = [model(**obj) for obj in obj_list]
-                model.objects.bulk_create(model_objs)
-
+                qs = model.objects.all()
+                total_entries = qs.count()
+                qs.delete()
                 if options["verbosity"] > 0:
                     self.stdout.write(
                         self.style.SUCCESS(
-                            f"Successfully populated {model_params_dict[model_key]['object_name']} Model with "
-                            f"{len(model_objs) :,} entries from year {year}"
+                            f"Successfully depopulated {model_key} Model with {total_entries :,} entries from year "
+                            f"{year}"
                         )
                     )
