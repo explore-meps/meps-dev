@@ -9,7 +9,7 @@ class HospitalInpatientStays18(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays18"
 
     DUID = models.CharField("PANEL # + ENCRYPTED DU IDENTIFIER", max_length=7)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -80,7 +80,7 @@ class HospitalInpatientStays17(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays17"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -153,7 +153,7 @@ class HospitalInpatientStays16(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays16"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -226,7 +226,7 @@ class HospitalInpatientStays15(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays15"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -303,7 +303,7 @@ class HospitalInpatientStays14(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays14"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -381,7 +381,7 @@ class HospitalInpatientStays13(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays13"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -459,7 +459,7 @@ class HospitalInpatientStays12(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays12"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -545,7 +545,7 @@ class HospitalInpatientStays11(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays11"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -631,7 +631,7 @@ class HospitalInpatientStays10(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays10"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -717,7 +717,7 @@ class HospitalInpatientStays09(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays09"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -803,7 +803,7 @@ class HospitalInpatientStays08(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays08"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -889,7 +889,7 @@ class HospitalInpatientStays07(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays07"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -971,7 +971,7 @@ class HospitalInpatientStays06(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays06"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -1057,7 +1057,7 @@ class HospitalInpatientStays05(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "HospitalInpatientStays"
+        verbose_name_plural = "HospitalInpatientStays05"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)

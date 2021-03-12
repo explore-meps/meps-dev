@@ -13,6 +13,7 @@ Features
 - Built ComponentPopulator, extracts ascii text from .dat files and orders according to the associated SAS .txt files
 - Built SQLite3 table which contains all models associated with an .dat file
 - Built model populating and depopulating management commands
+- Made server admin page accessible
 
 Updates:
 

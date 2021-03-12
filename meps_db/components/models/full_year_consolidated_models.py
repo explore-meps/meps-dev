@@ -9,7 +9,7 @@ class FullYearConsolidated18(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated18"
 
     DUID = models.CharField("PANEL # + ENCRYPTED DU IDENTIFIER", max_length=7)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -1527,7 +1527,7 @@ class FullYearConsolidated17(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated17"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -3108,7 +3108,7 @@ class FullYearConsolidated16(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated16"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -5066,7 +5066,7 @@ class FullYearConsolidated15(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated15"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -6914,7 +6914,7 @@ class FullYearConsolidated14(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated14"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -8769,7 +8769,7 @@ class FullYearConsolidated13(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated13"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -10576,7 +10576,7 @@ class FullYearConsolidated12(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated12"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -12476,7 +12476,7 @@ class FullYearConsolidated11(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated11"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -14420,7 +14420,7 @@ class FullYearConsolidated10(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated10"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -16348,7 +16348,7 @@ class FullYearConsolidated09(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated09"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -18273,7 +18273,7 @@ class FullYearConsolidated08(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated08"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -20196,7 +20196,7 @@ class FullYearConsolidated07(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated07"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -21993,7 +21993,7 @@ class FullYearConsolidated06(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated06"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
@@ -23682,7 +23682,7 @@ class FullYearConsolidated05(models.Model):
         """ Set parameters for admin app"""
 
         ordering = ["DUPERSID"]
-        verbose_name_plural = "FullYearConsolidated"
+        verbose_name_plural = "FullYearConsolidated05"
 
     DUID = models.CharField("DWELLING UNIT ID", max_length=5)
     PID = models.CharField("PERSON NUMBER", max_length=3)
