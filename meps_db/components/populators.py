@@ -6,7 +6,6 @@ from zipfile import ZipFile
 from meps_db.utilities.universal_utilities import UniversalUtilityFunctions as util
 
 from meps_db.components.reference import (
-    FYCDF_PUF_LOOKUP,
     FYPCDF_PUF_LOOKUP,
     MCDF_PUF_LOOKUP,
     PMDF_PUF_LOOKUP,
@@ -167,7 +166,6 @@ class ComponentPopulator(BaseComponentsPopulator):
         self.data_type = data_type
 
         self.data_map = {
-            "consolidated": FYCDF_PUF_LOOKUP,
             "population_characteristics": FYPCDF_PUF_LOOKUP,
             "medical_conditions": MCDF_PUF_LOOKUP,
             "prescribed_medicines": PMDF_PUF_LOOKUP,

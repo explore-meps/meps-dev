@@ -32,23 +32,6 @@ from .emergency_room_visits_models import (
     EmergencyRoomVisits05,
 )
 
-from .full_year_consolidated_models import (
-    FullYearConsolidated18,
-    FullYearConsolidated17,
-    FullYearConsolidated16,
-    FullYearConsolidated15,
-    FullYearConsolidated14,
-    FullYearConsolidated13,
-    FullYearConsolidated12,
-    FullYearConsolidated11,
-    FullYearConsolidated10,
-    FullYearConsolidated09,
-    FullYearConsolidated08,
-    FullYearConsolidated07,
-    FullYearConsolidated06,
-    FullYearConsolidated05,
-)
-
 from .home_health_models import (
     HomeHealth18,
     HomeHealth17,

@@ -9,7 +9,6 @@ from meps_db.components.reference import (
     DATA_FILES_BASE_URL,
     DATA_STATS_BASE_URL,
     DATA_FILES_YEARS,
-    FYCDF_PUF_LOOKUP,
     FYPCDF_PUF_LOOKUP,
     MCDF_PUF_LOOKUP,
     PMDF_PUF_LOOKUP,
@@ -47,7 +46,6 @@ class ScrapMEPS:
     def run(self):
         """ Primary entry point of ScrapMEPS """
 
-        self.get_data_files(folder="consolidated", year_lookup=FYCDF_PUF_LOOKUP)
         self.get_data_files(folder="population_characteristics", year_lookup=FYPCDF_PUF_LOOKUP)
         self.get_data_files(folder="medical_conditions", year_lookup=MCDF_PUF_LOOKUP)
         self.get_data_files(folder="prescribed_medicines", year_lookup=PMDF_PUF_LOOKUP)

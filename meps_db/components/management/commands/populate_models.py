@@ -190,7 +190,6 @@ from meps_db.components.models.prescribed_medicines_models import (
     PrescribedMedicines05,
 )
 
-
 class Command(BaseCommand):
     """ Management command to populate components models. Run in terminal.
         ex:

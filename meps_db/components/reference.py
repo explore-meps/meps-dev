@@ -23,7 +23,6 @@ DATA_FILES_YEARS = [
 BASE_MODELS = [
     "DentalVisits",
     "EmergencyRoomVisits",
-    "FullYearConsolidated",
     "HomeHealth",
     "HospitalInpatientStays",
     "MedicalConditions",
@@ -34,8 +33,8 @@ BASE_MODELS = [
     "PrescribedMedicines",
 ]
 
-# Full Year Consolidated Data Files
-FYCDF_PUF_LOOKUP = {
+# Full Year Population Characteristics Data Files
+FYPCDF_PUF_LOOKUP = {
     2018: "h209",
     2017: "h201",
     2016: "h192",
@@ -47,24 +46,6 @@ FYCDF_PUF_LOOKUP = {
     2010: "h138",
     2009: "h129",
     2008: "h121",
-    2007: "h113",
-    2006: "h105",
-    2005: "h97",
-}
-
-# Full Year Population Characteristics Data Files
-FYPCDF_PUF_LOOKUP = {
-    2018: "h204",
-    2017: "h194",
-    2016: "h184",
-    2015: "h174",
-    2014: "h165",
-    2013: "h157",
-    2012: "h149",
-    2011: "h141",
-    2010: "h132",
-    2009: "h123",
-    2008: "h115",
     2007: "h113",
     2006: "h105",
     2005: "h97",
