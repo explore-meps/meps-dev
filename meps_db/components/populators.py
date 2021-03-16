@@ -187,8 +187,9 @@ class ComponentPopulator(BaseComponentsPopulator):
             folder=self.data_type, year=self.year, year_lookup=self.data_map[self.data_type]
         )
 
-        # handle edge where the 2011 FYCDF contains more than 2000 columns, remove fields related to the CSAQ survey
-        if self.data_type == "consolidated" and self.year == 2011:
+        # handle edge where the 2011 population characteristics contains more than 2000 columns, remove fields related
+        # to the CSAQ survey
+        if self.data_type == "population_characteristics" and self.year == 2011:
             # fields to pop
             fields_to_pop = []
             for var, var_dict in variable_parameters.items():
