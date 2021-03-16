@@ -16,7 +16,8 @@ from meps_db.components.models.emergency_room_visits_models import (
 )
 from meps_db.processors.encoders.base_encoder import BaseEncoder
 
-class  EmergencyRoomVisitsEncoder(BaseEncoder):
+
+class EmergencyRoomVisitsEncoder(BaseEncoder):
     """  Queries the EmergencyRoomVisits Tables. Encodes fields from strings to usable data types. """
 
     def __init__(self, year, dupersids=None):
@@ -27,66 +28,24 @@ class  EmergencyRoomVisitsEncoder(BaseEncoder):
                 dupersids: list of respondent dupersids to exclusively fetch data for
         """
 
-        self.year=year
-        self.dupersids=dupersids
+        self.year = year
+        self.dupersids = dupersids
 
         self.ER_LOOKUPS = {
-            2018: {
-                "model": EmergencyRoomVisits18,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2017: {
-                "model": EmergencyRoomVisits17,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2016: {
-                "model": EmergencyRoomVisits16,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2015: {
-                "model": EmergencyRoomVisits15,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2014: {
-                "model": EmergencyRoomVisits14,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2013: {
-                "model": EmergencyRoomVisits13,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2012: {
-                "model": EmergencyRoomVisits12,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2011: {
-                "model": EmergencyRoomVisits11,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2010: {
-                "model": EmergencyRoomVisits10,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2009: {
-                "model": EmergencyRoomVisits09,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2008: {
-                "model": EmergencyRoomVisits08,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2007: {
-                "model": EmergencyRoomVisits07,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2006: {
-                "model": EmergencyRoomVisits06,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
-            2005: {
-                "model": EmergencyRoomVisits05,
-                "fields": {"DUPERSID",  "EVNTIDX", "ERDATEYR", "ERDATEMM"},
-            },
+            2018: {"model": EmergencyRoomVisits18, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2017: {"model": EmergencyRoomVisits17, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2016: {"model": EmergencyRoomVisits16, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2015: {"model": EmergencyRoomVisits15, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2014: {"model": EmergencyRoomVisits14, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2013: {"model": EmergencyRoomVisits13, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2012: {"model": EmergencyRoomVisits12, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2011: {"model": EmergencyRoomVisits11, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2010: {"model": EmergencyRoomVisits10, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2009: {"model": EmergencyRoomVisits09, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2008: {"model": EmergencyRoomVisits08, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2007: {"model": EmergencyRoomVisits07, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2006: {"model": EmergencyRoomVisits06, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
+            2005: {"model": EmergencyRoomVisits05, "fields": {"DUPERSID", "EVNTIDX", "ERDATEYR", "ERDATEMM"},},
         }
 
     def run(self):
@@ -94,15 +53,15 @@ class  EmergencyRoomVisitsEncoder(BaseEncoder):
 
         if self.dupersids:
             events = list(
-                self.ER_LOOKUPS[self.year]["model"].objects.filter(
-                    DUPERSID__in=self.dupersids).values(*self.ER_LOOKUPS[self.year]["fields"]
-                )
+                self.ER_LOOKUPS[self.year]["model"]
+                .objects.filter(DUPERSID__in=self.dupersids)
+                .values(*self.ER_LOOKUPS[self.year]["fields"])
             )
         else:
             events = list(
                 self.ER_LOOKUPS[self.year]["model"].objects.all().values(*self.ER_LOOKUPS[self.year]["fields"])
             )
-            
+
         respondents = {}
         for event in events:
             resp_id = event["DUPERSID"]
@@ -114,7 +73,7 @@ class  EmergencyRoomVisitsEncoder(BaseEncoder):
                     "date": self.generate_date(year_str=event["ERDATEYR"], month_str=event["ERDATEMM"]),
                 }
             )
-        
+
         respondents = self.order_histories(respondents=respondents)
 
         return respondents

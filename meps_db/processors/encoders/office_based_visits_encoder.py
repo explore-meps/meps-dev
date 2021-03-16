@@ -16,6 +16,7 @@ from meps_db.components.models.office_based_visits_models import (
 )
 from meps_db.processors.encoders.base_encoder import BaseEncoder
 
+
 class OfficeBasedVisitsEncoder(BaseEncoder):
     """  Queries the OfficeBasedVisits Tables. Encodes fields from strings to usable data types. """
 
@@ -27,78 +28,78 @@ class OfficeBasedVisitsEncoder(BaseEncoder):
                 dupersids: list of respondent dupersids to exclusively fetch data for
         """
 
-        self.year=year
-        self.dupersids=dupersids
+        self.year = year
+        self.dupersids = dupersids
 
         self.OB_LOOKUPS = {
             2018: {
                 "model": OfficeBasedVisits18,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC_M18"},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC_M18"},
                 "see_doc": "SEEDOC_M18",
             },
             2017: {
                 "model": OfficeBasedVisits17,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2016: {
                 "model": OfficeBasedVisits16,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2015: {
                 "model": OfficeBasedVisits15,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2014: {
                 "model": OfficeBasedVisits14,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2013: {
                 "model": OfficeBasedVisits13,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2012: {
                 "model": OfficeBasedVisits12,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2011: {
                 "model": OfficeBasedVisits11,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2010: {
                 "model": OfficeBasedVisits10,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2009: {
                 "model": OfficeBasedVisits09,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2008: {
                 "model": OfficeBasedVisits08,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2007: {
                 "model": OfficeBasedVisits07,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2006: {
                 "model": OfficeBasedVisits06,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
             2005: {
                 "model": OfficeBasedVisits05,
-                "fields": {"DUPERSID",  "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
+                "fields": {"DUPERSID", "EVNTIDX", "OBDATEYR", "OBDATEMM", "SEEDOC",},
                 "see_doc": "SEEDOC",
             },
         }
@@ -109,9 +110,9 @@ class OfficeBasedVisitsEncoder(BaseEncoder):
 
         if self.dupersids:
             events = list(
-                self.OB_LOOKUPS[self.year]["model"].objects.filter(
-                    DUPERSID__in=self.dupersids).values(*self.OB_LOOKUPS[self.year]["fields"]
-                )
+                self.OB_LOOKUPS[self.year]["model"]
+                .objects.filter(DUPERSID__in=self.dupersids)
+                .values(*self.OB_LOOKUPS[self.year]["fields"])
             )
         else:
             events = list(
@@ -126,10 +127,10 @@ class OfficeBasedVisitsEncoder(BaseEncoder):
                 {
                     "event_id": event["EVNTIDX"],
                     "date": self.generate_date(year_str=event["OBDATEYR"], month_str=event["OBDATEMM"]),
-                    "physician_event": event[self.OB_LOOKUPS[self.year]["see_doc"]] in {"01"}
+                    "physician_event": event[self.OB_LOOKUPS[self.year]["see_doc"]] in {"01"},
                 }
             )
-        
+
         respondents = self.order_histories(respondents=respondents)
 
         return respondents

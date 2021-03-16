@@ -16,6 +16,7 @@ from meps_db.components.models.home_health_models import (
 )
 from meps_db.processors.encoders.base_encoder import BaseEncoder
 
+
 class HomeHealthEncoder(BaseEncoder):
     """  Queries the HomeHealth Tables. Encodes fields from strings to usable data types. """
 
@@ -27,65 +28,65 @@ class HomeHealthEncoder(BaseEncoder):
                 dupersids: list of respondent dupersids to exclusively fetch data for
         """
 
-        self.year=year
-        self.dupersids=dupersids
+        self.year = year
+        self.dupersids = dupersids
 
         self.HH_LOOKUPS = {
             2018: {
                 "model": HomeHealth18,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2017: {
                 "model": HomeHealth17,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2016: {
                 "model": HomeHealth16,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2015: {
                 "model": HomeHealth15,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2014: {
                 "model": HomeHealth14,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2013: {
                 "model": HomeHealth13,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2012: {
                 "model": HomeHealth12,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2011: {
                 "model": HomeHealth11,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2010: {
                 "model": HomeHealth10,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2009: {
                 "model": HomeHealth09,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2008: {
                 "model": HomeHealth08,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2007: {
                 "model": HomeHealth07,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2006: {
                 "model": HomeHealth06,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
             2005: {
                 "model": HomeHealth05,
-                "fields": {"DUPERSID",  "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
+                "fields": {"DUPERSID", "EVNTIDX", "HHDATEYR", "HHDATEMM", "MPCELIG", "HHDAYS"},
             },
         }
 
@@ -94,15 +95,15 @@ class HomeHealthEncoder(BaseEncoder):
 
         if self.dupersids:
             events = list(
-                self.HH_LOOKUPS[self.year]["model"].objects.filter(
-                    DUPERSID__in=self.dupersids).values(*self.HH_LOOKUPS[self.year]["fields"]
-                )
+                self.HH_LOOKUPS[self.year]["model"]
+                .objects.filter(DUPERSID__in=self.dupersids)
+                .values(*self.HH_LOOKUPS[self.year]["fields"])
             )
         else:
             events = list(
                 self.HH_LOOKUPS[self.year]["model"].objects.all().values(*self.HH_LOOKUPS[self.year]["fields"])
             )
-            
+
         respondents = {}
         for event in events:
             resp_id = event["DUPERSID"]
@@ -120,22 +121,22 @@ class HomeHealthEncoder(BaseEncoder):
             home_health_agency_days, home_health_non_agency_days, home_health_informal_days = 0, 0, 0
             if event["MPCELIG"] == "1":
                 if event["HHDAYS"] not in {"-15", "-9", "-8", "-7"}:
-                    home_health_agency_days = int(event["HHDAYS"]) 
+                    home_health_agency_days = int(event["HHDAYS"])
                 else:
                     home_health_agency_days = None
-                
+
             if event["MPCELIG"] == "2":
                 if event["HHDAYS"] not in {"-15", "-9", "-8", "-7"}:
                     home_health_non_agency_days = int(event["HHDAYS"])
                 else:
                     home_health_non_agency_days = None
-                
+
             if event["MPCELIG"] == "3":
                 if event["HHDAYS"] not in {"-15", "-9", "-8", "-7"}:
                     home_health_informal_days = int(event["HHDAYS"])
                 else:
                     home_health_informal_days = None
-                
+
             respondents[resp_id].append(
                 {
                     "event_id": event["EVNTIDX"],
@@ -143,10 +144,10 @@ class HomeHealthEncoder(BaseEncoder):
                     "home_health_provider_days": home_health_provider_days,
                     "home_health_agency_days": home_health_agency_days,
                     "home_health_non_agency_days": home_health_non_agency_days,
-                    "home_health_informal_days": home_health_informal_days
+                    "home_health_informal_days": home_health_informal_days,
                 }
             )
 
         respondents = self.order_histories(respondents=respondents)
-        
+
         return respondents

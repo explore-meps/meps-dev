@@ -16,6 +16,7 @@ from meps_db.components.models.population_characteristics_models import (
 )
 from meps_db.processors.encoders.base_encoder import BaseEncoder
 
+
 class PopulationCharacteristicsEncoder(BaseEncoder):
     """  Queries the PopulationCharacteristics Tables. Encodes fields from strings to usable data types. """
 
@@ -27,19 +28,18 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                 dupersids: list of respondent dupersids to exclusively fetch data for
         """
 
-        self.year=year
-        self.dupersids=dupersids
+        self.year = year
+        self.dupersids = dupersids
 
         self.PC_LOOKUPS = {
             2018: {
-                "model":PopulationCharacteristics18,
+                "model": PopulationCharacteristics18,
                 "fields": {"DUPERSID", "AGE18X", "SEX", "RACEV1X", "RACEV2X", "PERWT18F"},
                 "age": "AGE18X",
                 "race_v0": None,
                 "race_v1": "RACEV1X",
                 "race_v2": "RACEV2X",
                 "weight": "PERWT18F",
-
             },
             2017: {
                 "model": PopulationCharacteristics17,
@@ -61,7 +61,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             },
             2015: {
                 "model": PopulationCharacteristics15,
-                "fields": {"DUPERSID", "AGE15X", "SEX", "RACEV1X",  "RACEV2X", "PERWT15F"},
+                "fields": {"DUPERSID", "AGE15X", "SEX", "RACEV1X", "RACEV2X", "PERWT15F"},
                 "age": "AGE15X",
                 "race_v0": None,
                 "race_v1": "RACEV1X",
@@ -161,38 +161,34 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
         }
 
         self.RACE_V0_ENCODER = {
-            "1": "WHITE - NO OTHER RACE REPORTED",	
-            "2": "BLACK - NO OTHER RACE REPORTED",	
-            "3": "AMER INDIAN/ALASKA NATIVE - NO OTH RAC",	
-            "4": "ASIAN - NO OTHER RACE REPORTED",	
-            "5": "NATIVE HAWAIIAN/PACIFIC ISLANDER-NO OTHR",	
+            "1": "WHITE - NO OTHER RACE REPORTED",
+            "2": "BLACK - NO OTHER RACE REPORTED",
+            "3": "AMER INDIAN/ALASKA NATIVE - NO OTH RAC",
+            "4": "ASIAN - NO OTHER RACE REPORTED",
+            "5": "NATIVE HAWAIIAN/PACIFIC ISLANDER-NO OTHR",
             "6": "MULTIPLE RACES REPORTED",
         }
 
         self.RACE_V1_ENCODER = {
-            "1": "WHITE - NO OTHER RACE REPORTED",	
-            "2": "BLACK - NO OTHER RACE REPORTED",	
-            "3": "AMER INDIAN/ALASKA NATIVE-NO OTHER RACE",	
-            "4": "ASIAN/NATV HAWAIIAN/PACFC ISL-NO OTH",	
-            "6": "MULTIPLE RACES REPORTED",	
+            "1": "WHITE - NO OTHER RACE REPORTED",
+            "2": "BLACK - NO OTHER RACE REPORTED",
+            "3": "AMER INDIAN/ALASKA NATIVE-NO OTHER RACE",
+            "4": "ASIAN/NATV HAWAIIAN/PACFC ISL-NO OTH",
+            "6": "MULTIPLE RACES REPORTED",
         }
 
         self.RACE_V2_ENCODER = {
-
-            "01": "WHITE - NO OTHER RACE REPORTED",	
-            "02": "BLACK - NO OTHER RACE REPORTED",	
-            "03": "AMER INDIAN/ALASKA NATIVE-NO OTHER RACE",	
-            "04": "ASIAN INDIAN - NO OTHER RACE REPORTED",	
-            "05": "CHINESE - NO OTHER RACE REPORTED",	
-            "06": "FILIPINO - NO OTHER RACE REPORTED",	
-            "10": "OTH ASIAN/NATV HAWAIIAN/PACFC ISL-NO OTH",	
+            "01": "WHITE - NO OTHER RACE REPORTED",
+            "02": "BLACK - NO OTHER RACE REPORTED",
+            "03": "AMER INDIAN/ALASKA NATIVE-NO OTHER RACE",
+            "04": "ASIAN INDIAN - NO OTHER RACE REPORTED",
+            "05": "CHINESE - NO OTHER RACE REPORTED",
+            "06": "FILIPINO - NO OTHER RACE REPORTED",
+            "10": "OTH ASIAN/NATV HAWAIIAN/PACFC ISL-NO OTH",
             "12": "MULTIPLE RACES REPORTED",
         }
 
-        self.SEX_ENCODER = {
-            "1": "MALE",
-            "2": "FEMALE"
-        }
+        self.SEX_ENCODER = {"1": "MALE", "2": "FEMALE"}
 
     def run(self):
         """ Fetches all respondents for a year. Stores basic characteristics. 
@@ -212,9 +208,9 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
 
         if self.dupersids:
             respondents_data = list(
-                self.PC_LOOKUPS[self.year]["model"].objects.filter(
-                    DUPERSID__in=self.dupersids).values(*self.PC_LOOKUPS[self.year]["fields"]
-                )
+                self.PC_LOOKUPS[self.year]["model"]
+                .objects.filter(DUPERSID__in=self.dupersids)
+                .values(*self.PC_LOOKUPS[self.year]["fields"])
             )
         else:
             respondents_data = list(

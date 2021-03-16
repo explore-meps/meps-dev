@@ -20,8 +20,8 @@ class RespondentHistoryGenerator:
                 dupersids: list of respondent dupersids to exclusively fetch data for
         """
 
-        self.years=years
-        self.dupersids=dupersids
+        self.years = years
+        self.dupersids = dupersids
 
     def run(self):
         """ Primary Entry Point of RespondentHistoryGenerator """
@@ -30,8 +30,8 @@ class RespondentHistoryGenerator:
 
         for year in self.years:
             population = PopulationCharacteristicsEncoder(year=year, dupersids=self.dupersids).run()
-            office_based = OfficeBasedVisitsEncoder(year=year, dupersids=self.dupersids).run() 
-            outpatient = OutpatientVisitsEncoder(year=year, dupersids=self.dupersids).run() 
+            office_based = OfficeBasedVisitsEncoder(year=year, dupersids=self.dupersids).run()
+            outpatient = OutpatientVisitsEncoder(year=year, dupersids=self.dupersids).run()
             emergency_room = EmergencyRoomVisitsEncoder(year=year, dupersids=self.dupersids).run()
             hosptial_inpatient = HospitalInpatientStaysEncoder(year=year, dupersids=self.dupersids).run()
             dental_care = DentalVisitsEncoder(year=year, dupersids=self.dupersids).run()
@@ -50,7 +50,7 @@ class RespondentHistoryGenerator:
                 other_medical=other_medical,
                 presciption_medicines=presciption_medicines,
             )
-        
+
         return respondent_history
 
     @staticmethod
@@ -81,10 +81,6 @@ class RespondentHistoryGenerator:
 
         for resp_id, resp_dict in population.items():
             for event_name, event_dict in event_lookup:
-                resp_dict.update(
-                    {
-                        event_name: event_dict.get(resp_id, [])
-                    }
-                )
-        
+                resp_dict.update({event_name: event_dict.get(resp_id, [])})
+
         return population

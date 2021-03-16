@@ -16,6 +16,7 @@ from meps_db.components.models.hospital_inpatient_stays_models import (
 )
 from meps_db.processors.encoders.base_encoder import BaseEncoder
 
+
 class HospitalInpatientStaysEncoder(BaseEncoder):
     """  Queries the HospitalInpatientStays Tables. Encodes fields from strings to usable data types. """
 
@@ -27,65 +28,65 @@ class HospitalInpatientStaysEncoder(BaseEncoder):
                 dupersids: list of respondent dupersids to exclusively fetch data for
         """
 
-        self.year=year
-        self.dupersids=dupersids
+        self.year = year
+        self.dupersids = dupersids
 
         self.HIS_LOOKUPS = {
             2018: {
                 "model": HospitalInpatientStays18,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2017: {
                 "model": HospitalInpatientStays17,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2016: {
                 "model": HospitalInpatientStays16,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2015: {
                 "model": HospitalInpatientStays15,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2014: {
                 "model": HospitalInpatientStays14,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2013: {
                 "model": HospitalInpatientStays13,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2012: {
                 "model": HospitalInpatientStays12,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2011: {
                 "model": HospitalInpatientStays11,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2010: {
                 "model": HospitalInpatientStays10,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2009: {
                 "model": HospitalInpatientStays09,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2008: {
                 "model": HospitalInpatientStays08,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2007: {
                 "model": HospitalInpatientStays07,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2006: {
                 "model": HospitalInpatientStays06,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
             2005: {
                 "model": HospitalInpatientStays05,
-                "fields": {"DUPERSID",  "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
+                "fields": {"DUPERSID", "EVNTIDX", "IPBEGYR", "IPBEGMM", "NUMNIGHX"},
             },
         }
 
@@ -95,15 +96,15 @@ class HospitalInpatientStaysEncoder(BaseEncoder):
 
         if self.dupersids:
             events = list(
-                self.HIS_LOOKUPS[self.year]["model"].objects.filter(
-                    DUPERSID__in=self.dupersids).values(*self.HIS_LOOKUPS[self.year]["fields"]
-                )
+                self.HIS_LOOKUPS[self.year]["model"]
+                .objects.filter(DUPERSID__in=self.dupersids)
+                .values(*self.HIS_LOOKUPS[self.year]["fields"])
             )
         else:
             events = list(
                 self.HIS_LOOKUPS[self.year]["model"].objects.all().values(*self.HIS_LOOKUPS[self.year]["fields"])
             )
-            
+
         respondents = {}
         for event in events:
             resp_id = event["DUPERSID"]
@@ -113,10 +114,10 @@ class HospitalInpatientStaysEncoder(BaseEncoder):
                 {
                     "event_id": event["EVNTIDX"],
                     "date": self.generate_date(year_str=event["IPBEGYR"], month_str=event["IPBEGMM"]),
-                    "nights": int(event["NUMNIGHX"])
+                    "nights": int(event["NUMNIGHX"]),
                 }
             )
-        
+
         respondents = self.order_histories(respondents=respondents)
-        
+
         return respondents

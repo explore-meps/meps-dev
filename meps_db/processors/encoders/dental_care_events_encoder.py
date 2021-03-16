@@ -16,6 +16,7 @@ from meps_db.components.models.dental_visits_models import (
 )
 from meps_db.processors.encoders.base_encoder import BaseEncoder
 
+
 class DentalVisitsEncoder(BaseEncoder):
     """  Queries the DentalVisits Tables. Encodes fields from strings to usable data types. """
 
@@ -27,82 +28,40 @@ class DentalVisitsEncoder(BaseEncoder):
                 dupersids: list of respondent dupersids to exclusively fetch data for
         """
 
-        self.year=year
-        self.dupersids=dupersids
+        self.year = year
+        self.dupersids = dupersids
 
         self.DV_LOOKUPS = {
-            2018: {
-                "model": DentalVisits18,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2017: {
-                "model": DentalVisits17,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2016: {
-                "model": DentalVisits16,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2015: {
-                "model": DentalVisits15,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2014: {
-                "model": DentalVisits14,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2013: {
-                "model": DentalVisits13,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2012: {
-                "model": DentalVisits12,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2011: {
-                "model": DentalVisits11,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2010: {
-                "model": DentalVisits10,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2009: {
-                "model": DentalVisits09,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2008: {
-                "model": DentalVisits08,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2007: {
-                "model": DentalVisits07,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2006: {
-                "model": DentalVisits06,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
-            2005: {
-                "model": DentalVisits05,
-                "fields": {"DUPERSID",  "EVNTIDX", "DVDATEYR", "DVDATEMM"},
-            },
+            2018: {"model": DentalVisits18, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2017: {"model": DentalVisits17, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2016: {"model": DentalVisits16, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2015: {"model": DentalVisits15, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2014: {"model": DentalVisits14, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2013: {"model": DentalVisits13, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2012: {"model": DentalVisits12, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2011: {"model": DentalVisits11, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2010: {"model": DentalVisits10, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2009: {"model": DentalVisits09, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2008: {"model": DentalVisits08, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2007: {"model": DentalVisits07, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2006: {"model": DentalVisits06, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
+            2005: {"model": DentalVisits05, "fields": {"DUPERSID", "EVNTIDX", "DVDATEYR", "DVDATEMM"},},
         }
 
     def run(self):
         """ Groups events by respondents. Return a list of ordered events for each respondent. """
-       
+
         if self.dupersids:
             events = list(
-                self.DV_LOOKUPS[self.year]["model"].objects.filter(
-                    DUPERSID__in=self.dupersids).values(*self.DV_LOOKUPS[self.year]["fields"]
-                )
+                self.DV_LOOKUPS[self.year]["model"]
+                .objects.filter(DUPERSID__in=self.dupersids)
+                .values(*self.DV_LOOKUPS[self.year]["fields"])
             )
         else:
             events = list(
                 self.DV_LOOKUPS[self.year]["model"].objects.all().values(*self.DV_LOOKUPS[self.year]["fields"])
             )
-            
+
         respondents = {}
         for event in events:
             resp_id = event["DUPERSID"]
@@ -114,7 +73,7 @@ class DentalVisitsEncoder(BaseEncoder):
                     "date": self.generate_date(year_str=event["DVDATEYR"], month_str=event["DVDATEMM"]),
                 }
             )
-        
+
         respondents = self.order_histories(respondents=respondents)
-        
+
         return respondents
