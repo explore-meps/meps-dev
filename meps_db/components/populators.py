@@ -6,7 +6,6 @@ from zipfile import ZipFile
 from meps_db.utilities.universal_utilities import UniversalUtilityFunctions as util
 
 from meps_db.components.reference import (
-    FYCDF_PUF_LOOKUP,
     FYPCDF_PUF_LOOKUP,
     MCDF_PUF_LOOKUP,
     PMDF_PUF_LOOKUP,
@@ -167,7 +166,6 @@ class ComponentPopulator(BaseComponentsPopulator):
         self.data_type = data_type
 
         self.data_map = {
-            "consolidated": FYCDF_PUF_LOOKUP,
             "population_characteristics": FYPCDF_PUF_LOOKUP,
             "medical_conditions": MCDF_PUF_LOOKUP,
             "prescribed_medicines": PMDF_PUF_LOOKUP,
@@ -189,8 +187,9 @@ class ComponentPopulator(BaseComponentsPopulator):
             folder=self.data_type, year=self.year, year_lookup=self.data_map[self.data_type]
         )
 
-        # handle edge where the 2011 FYCDF contains more than 2000 columns, remove fields related to the CSAQ survey
-        if self.data_type == "consolidated" and self.year == 2011:
+        # handle edge where the 2011 population characteristics contains more than 2000 columns, remove fields related
+        # to the CSAQ survey
+        if self.data_type == "population_characteristics" and self.year == 2011:
             # fields to pop
             fields_to_pop = []
             for var, var_dict in variable_parameters.items():

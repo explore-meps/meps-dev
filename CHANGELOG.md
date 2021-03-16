@@ -14,6 +14,8 @@ Features
 - Built SQLite3 table which contains all models associated with an .dat file
 - Built model populating and depopulating management commands
 - Made server admin page accessible
+- Removed Full Year Consolidated Data File assets, as it's superceeded by PopulationCharacteristics
+- Built Simple Timeline Generator
 
 Updates:
 

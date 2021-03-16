@@ -37,23 +37,6 @@ from meps_db.components.models.emergency_room_visits_models import (
     EmergencyRoomVisits05,
 )
 
-from meps_db.components.models.full_year_consolidated_models import (
-    FullYearConsolidated18,
-    FullYearConsolidated17,
-    FullYearConsolidated16,
-    FullYearConsolidated15,
-    FullYearConsolidated14,
-    FullYearConsolidated13,
-    FullYearConsolidated12,
-    FullYearConsolidated11,
-    FullYearConsolidated10,
-    FullYearConsolidated09,
-    FullYearConsolidated08,
-    FullYearConsolidated07,
-    FullYearConsolidated06,
-    FullYearConsolidated05,
-)
-
 from meps_db.components.models.home_health_models import (
     HomeHealth18,
     HomeHealth17,
@@ -221,11 +204,6 @@ class Command(BaseCommand):
                 "data_type": "emergency_room_visits",
                 "object_name": "EmergencyRoomVisits",
             },
-            "FullYearConsolidated": {
-                "populator": ComponentPopulator,
-                "data_type": "consolidated",
-                "object_name": "FullYearConsolidated",
-            },
             "HomeHealth": {"populator": ComponentPopulator, "data_type": "home_health", "object_name": "HomeHealth"},
             "HospitalInpatientStays": {
                 "populator": ComponentPopulator,
@@ -314,22 +292,6 @@ class Command(BaseCommand):
                 2007: EmergencyRoomVisits07,
                 2006: EmergencyRoomVisits06,
                 2005: EmergencyRoomVisits05,
-            },
-            "FullYearConsolidated": {
-                2018: FullYearConsolidated18,
-                2017: FullYearConsolidated17,
-                2016: FullYearConsolidated16,
-                2015: FullYearConsolidated15,
-                2014: FullYearConsolidated14,
-                2013: FullYearConsolidated13,
-                2012: FullYearConsolidated12,
-                2011: FullYearConsolidated11,
-                2010: FullYearConsolidated10,
-                2009: FullYearConsolidated09,
-                2008: FullYearConsolidated08,
-                2007: FullYearConsolidated07,
-                2006: FullYearConsolidated06,
-                2005: FullYearConsolidated05,
             },
             "HomeHealth": {
                 2018: HomeHealth18,
