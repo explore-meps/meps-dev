@@ -35,9 +35,25 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2018: {
                 "model": PopulationCharacteristics18,
                 "fields": {
-                    "DUPERSID", "AGE18X", "SEX", "RACEV1X", "RACEV2X", "PERWT18F", "INSCOV18", "INSURC18", "DVTEXP18",
-                    "ERTEXP18", "HHAEXP18", "HHNEXP18", "IPTEXP18", "OBVEXP18", "OPTEXP18", "OTHEXP18", "RXEXP18", 
-                    "VISEXP18", "TOTEXP18"
+                    "DUPERSID",
+                    "AGE18X",
+                    "SEX",
+                    "RACEV1X",
+                    "RACEV2X",
+                    "PERWT18F",
+                    "INSCOV18",
+                    "INSURC18",
+                    "DVTEXP18",
+                    "ERTEXP18",
+                    "HHAEXP18",
+                    "HHNEXP18",
+                    "IPTEXP18",
+                    "OBVEXP18",
+                    "OPTEXP18",
+                    "OTHEXP18",
+                    "RXEXP18",
+                    "VISEXP18",
+                    "TOTEXP18",
                 },
                 "age": "AGE18X",
                 "race_v0": None,
@@ -61,9 +77,25 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2017: {
                 "model": PopulationCharacteristics17,
                 "fields": {
-                    "DUPERSID", "AGE17X", "SEX", "RACEV1X", "RACEV2X", "PERWT17F", "INSCOV17", "INSURC17", "DVTEXP17",
-                    "ERTEXP17", "HHAEXP17", "HHNEXP17", "IPTEXP17", "OBVEXP17", "OPTEXP17", "OTHEXP17", "RXEXP17",
-                    "VISEXP17", "TOTEXP17"
+                    "DUPERSID",
+                    "AGE17X",
+                    "SEX",
+                    "RACEV1X",
+                    "RACEV2X",
+                    "PERWT17F",
+                    "INSCOV17",
+                    "INSURC17",
+                    "DVTEXP17",
+                    "ERTEXP17",
+                    "HHAEXP17",
+                    "HHNEXP17",
+                    "IPTEXP17",
+                    "OBVEXP17",
+                    "OPTEXP17",
+                    "OTHEXP17",
+                    "RXEXP17",
+                    "VISEXP17",
+                    "TOTEXP17",
                 },
                 "age": "AGE17X",
                 "race_v0": None,
@@ -87,9 +119,25 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2016: {
                 "model": PopulationCharacteristics16,
                 "fields": {
-                    "DUPERSID", "AGE16X", "SEX", "RACEV1X", "RACEV2X", "PERWT16F", "INSCOV16", "INSURC16", "DVTEXP16",
-                    "ERTEXP16", "HHAEXP16", "HHNEXP16", "IPTEXP16", "OBVEXP16", "OPTEXP16", "OTHEXP16", "RXEXP16",
-                    "VISEXP16", "TOTEXP16"
+                    "DUPERSID",
+                    "AGE16X",
+                    "SEX",
+                    "RACEV1X",
+                    "RACEV2X",
+                    "PERWT16F",
+                    "INSCOV16",
+                    "INSURC16",
+                    "DVTEXP16",
+                    "ERTEXP16",
+                    "HHAEXP16",
+                    "HHNEXP16",
+                    "IPTEXP16",
+                    "OBVEXP16",
+                    "OPTEXP16",
+                    "OTHEXP16",
+                    "RXEXP16",
+                    "VISEXP16",
+                    "TOTEXP16",
                 },
                 "age": "AGE16X",
                 "race_v0": None,
@@ -113,9 +161,25 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2015: {
                 "model": PopulationCharacteristics15,
                 "fields": {
-                    "DUPERSID", "AGE15X", "SEX", "RACEV1X", "RACEV2X", "PERWT15F", "INSCOV15", "INSURC15", "DVTEXP15",
-                    "ERTEXP15", "HHAEXP15", "HHNEXP15", "IPTEXP15", "OBVEXP15", "OPTEXP15", "OTHEXP15", "RXEXP15",
-                    "VISEXP15", "TOTEXP15"
+                    "DUPERSID",
+                    "AGE15X",
+                    "SEX",
+                    "RACEV1X",
+                    "RACEV2X",
+                    "PERWT15F",
+                    "INSCOV15",
+                    "INSURC15",
+                    "DVTEXP15",
+                    "ERTEXP15",
+                    "HHAEXP15",
+                    "HHNEXP15",
+                    "IPTEXP15",
+                    "OBVEXP15",
+                    "OPTEXP15",
+                    "OTHEXP15",
+                    "RXEXP15",
+                    "VISEXP15",
+                    "TOTEXP15",
                 },
                 "age": "AGE15X",
                 "race_v0": None,
@@ -139,9 +203,25 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2014: {
                 "model": PopulationCharacteristics14,
                 "fields": {
-                    "DUPERSID", "AGE14X", "SEX", "RACEV1X", "RACEV2X", "PERWT14F", "INSCOV14", "INSURC14", "DVTEXP14",
-                    "ERTEXP14", "HHAEXP14", "HHNEXP14", "IPTEXP14", "OBVEXP14", "OPTEXP14", "OTHEXP14", "RXEXP14",
-                    "VISEXP14", "TOTEXP14"
+                    "DUPERSID",
+                    "AGE14X",
+                    "SEX",
+                    "RACEV1X",
+                    "RACEV2X",
+                    "PERWT14F",
+                    "INSCOV14",
+                    "INSURC14",
+                    "DVTEXP14",
+                    "ERTEXP14",
+                    "HHAEXP14",
+                    "HHNEXP14",
+                    "IPTEXP14",
+                    "OBVEXP14",
+                    "OPTEXP14",
+                    "OTHEXP14",
+                    "RXEXP14",
+                    "VISEXP14",
+                    "TOTEXP14",
                 },
                 "age": "AGE14X",
                 "race_v0": None,
@@ -165,9 +245,25 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2013: {
                 "model": PopulationCharacteristics13,
                 "fields": {
-                    "DUPERSID", "AGE13X", "SEX", "RACEV1X", "RACEV2X", "PERWT13F", "INSCOV13", "INSURC13", "DVTEXP13",
-                    "ERTEXP13", "HHAEXP13", "HHNEXP13", "IPTEXP13", "OBVEXP13", "OPTEXP13", "OTHEXP13", "RXEXP13",
-                    "VISEXP13", "TOTEXP13"
+                    "DUPERSID",
+                    "AGE13X",
+                    "SEX",
+                    "RACEV1X",
+                    "RACEV2X",
+                    "PERWT13F",
+                    "INSCOV13",
+                    "INSURC13",
+                    "DVTEXP13",
+                    "ERTEXP13",
+                    "HHAEXP13",
+                    "HHNEXP13",
+                    "IPTEXP13",
+                    "OBVEXP13",
+                    "OPTEXP13",
+                    "OTHEXP13",
+                    "RXEXP13",
+                    "VISEXP13",
+                    "TOTEXP13",
                 },
                 "age": "AGE13X",
                 "race_v0": None,
@@ -191,9 +287,24 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2012: {
                 "model": PopulationCharacteristics12,
                 "fields": {
-                    "DUPERSID", "AGE12X", "SEX", "RACEV1X", "PERWT12F", "INSCOV12", "INSURC12", "DVTEXP12", 
-                    "ERTEXP12", "HHAEXP12", "HHNEXP12", "IPTEXP12", "OBVEXP12", "OPTEXP12",  "OTHEXP12", "RXEXP12",
-                    "VISEXP12", "TOTEXP12" 
+                    "DUPERSID",
+                    "AGE12X",
+                    "SEX",
+                    "RACEV1X",
+                    "PERWT12F",
+                    "INSCOV12",
+                    "INSURC12",
+                    "DVTEXP12",
+                    "ERTEXP12",
+                    "HHAEXP12",
+                    "HHNEXP12",
+                    "IPTEXP12",
+                    "OBVEXP12",
+                    "OPTEXP12",
+                    "OTHEXP12",
+                    "RXEXP12",
+                    "VISEXP12",
+                    "TOTEXP12",
                 },
                 "age": "AGE12X",
                 "race_v0": None,
@@ -217,9 +328,24 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2011: {
                 "model": PopulationCharacteristics11,
                 "fields": {
-                    "DUPERSID", "AGE11X", "SEX", "RACEX", "PERWT11F", "INSCOV11", "INSURC11", "DVTEXP11", 
-                    "ERTEXP11", "HHAEXP11", "HHNEXP11", "IPTEXP11", "OBVEXP11", "OPTEXP11",  "OTHEXP11", "RXEXP11",
-                    "VISEXP11", "TOTEXP11" 
+                    "DUPERSID",
+                    "AGE11X",
+                    "SEX",
+                    "RACEX",
+                    "PERWT11F",
+                    "INSCOV11",
+                    "INSURC11",
+                    "DVTEXP11",
+                    "ERTEXP11",
+                    "HHAEXP11",
+                    "HHNEXP11",
+                    "IPTEXP11",
+                    "OBVEXP11",
+                    "OPTEXP11",
+                    "OTHEXP11",
+                    "RXEXP11",
+                    "VISEXP11",
+                    "TOTEXP11",
                 },
                 "age": "AGE11X",
                 "race_v0": "RACEX",
@@ -243,10 +369,30 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2010: {
                 "model": PopulationCharacteristics10,
                 "fields": {
-                    "DUPERSID", "AGE10X", "SEX", "RACEX", "PERWT10F", "INSCOV10", "DVTEXP10", "PRVEV10", "TRIEV10", 
-                    "MCDEV10", "MCREV10", "OPAEV10", "OPBEV10", "UNINS10",
-                    "ERTEXP10", "HHAEXP10", "HHNEXP10", "IPTEXP10", "OBVEXP10", "OPTEXP10", "OTHEXP10", "RXEXP10",
-                    "VISEXP10", "TOTEXP10" 
+                    "DUPERSID",
+                    "AGE10X",
+                    "SEX",
+                    "RACEX",
+                    "PERWT10F",
+                    "INSCOV10",
+                    "DVTEXP10",
+                    "PRVEV10",
+                    "TRIEV10",
+                    "MCDEV10",
+                    "MCREV10",
+                    "OPAEV10",
+                    "OPBEV10",
+                    "UNINS10",
+                    "ERTEXP10",
+                    "HHAEXP10",
+                    "HHNEXP10",
+                    "IPTEXP10",
+                    "OBVEXP10",
+                    "OPTEXP10",
+                    "OTHEXP10",
+                    "RXEXP10",
+                    "VISEXP10",
+                    "TOTEXP10",
                 },
                 "age": "AGE10X",
                 "race_v0": "RACEX",
@@ -276,10 +422,30 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2009: {
                 "model": PopulationCharacteristics09,
                 "fields": {
-                    "DUPERSID", "AGE09X", "SEX", "RACEX", "PERWT09F", "INSCOV09","PRVEV09", "TRIEV09", 
-                    "MCDEV09", "MCREV09", "OPAEV09", "OPBEV09", "UNINS09", "DVTEXP09", 
-                    "ERTEXP09", "HHAEXP09", "HHNEXP09", "IPTEXP09", "OBVEXP09", "OPTEXP09",  "OTHEXP09", "RXEXP09",
-                    "VISEXP09", "TOTEXP09" 
+                    "DUPERSID",
+                    "AGE09X",
+                    "SEX",
+                    "RACEX",
+                    "PERWT09F",
+                    "INSCOV09",
+                    "PRVEV09",
+                    "TRIEV09",
+                    "MCDEV09",
+                    "MCREV09",
+                    "OPAEV09",
+                    "OPBEV09",
+                    "UNINS09",
+                    "DVTEXP09",
+                    "ERTEXP09",
+                    "HHAEXP09",
+                    "HHNEXP09",
+                    "IPTEXP09",
+                    "OBVEXP09",
+                    "OPTEXP09",
+                    "OTHEXP09",
+                    "RXEXP09",
+                    "VISEXP09",
+                    "TOTEXP09",
                 },
                 "age": "AGE09X",
                 "race_v0": "RACEX",
@@ -309,10 +475,30 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2008: {
                 "model": PopulationCharacteristics08,
                 "fields": {
-                    "DUPERSID", "AGE08X", "SEX", "RACEX", "PERWT08F", "INSCOV08","PRVEV08", "TRIEV08", 
-                    "MCDEV08", "MCREV08", "OPAEV08", "OPBEV08", "UNINS08", "DVTEXP08",
-                    "ERTEXP08", "HHAEXP08", "HHNEXP08", "IPTEXP08", "OBVEXP08", "OPTEXP08",  "OTHEXP08", "RXEXP08",
-                    "VISEXP08", "TOTEXP08" 
+                    "DUPERSID",
+                    "AGE08X",
+                    "SEX",
+                    "RACEX",
+                    "PERWT08F",
+                    "INSCOV08",
+                    "PRVEV08",
+                    "TRIEV08",
+                    "MCDEV08",
+                    "MCREV08",
+                    "OPAEV08",
+                    "OPBEV08",
+                    "UNINS08",
+                    "DVTEXP08",
+                    "ERTEXP08",
+                    "HHAEXP08",
+                    "HHNEXP08",
+                    "IPTEXP08",
+                    "OBVEXP08",
+                    "OPTEXP08",
+                    "OTHEXP08",
+                    "RXEXP08",
+                    "VISEXP08",
+                    "TOTEXP08",
                 },
                 "age": "AGE08X",
                 "race_v0": "RACEX",
@@ -342,10 +528,30 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2007: {
                 "model": PopulationCharacteristics07,
                 "fields": {
-                    "DUPERSID", "AGE07X", "SEX", "RACEX", "PERWT07F", "INSCOV07","PRVEV07", "TRIEV07", 
-                    "MCDEV07", "MCREV07", "OPAEV07", "OPBEV07", "UNINS07", "DVTEXP07", 
-                    "ERTEXP07", "HHAEXP07", "HHNEXP07", "IPTEXP07", "OBVEXP07", "OPTEXP07",  "OTHEXP07", "RXEXP07",
-                    "VISEXP07", "TOTEXP07" 
+                    "DUPERSID",
+                    "AGE07X",
+                    "SEX",
+                    "RACEX",
+                    "PERWT07F",
+                    "INSCOV07",
+                    "PRVEV07",
+                    "TRIEV07",
+                    "MCDEV07",
+                    "MCREV07",
+                    "OPAEV07",
+                    "OPBEV07",
+                    "UNINS07",
+                    "DVTEXP07",
+                    "ERTEXP07",
+                    "HHAEXP07",
+                    "HHNEXP07",
+                    "IPTEXP07",
+                    "OBVEXP07",
+                    "OPTEXP07",
+                    "OTHEXP07",
+                    "RXEXP07",
+                    "VISEXP07",
+                    "TOTEXP07",
                 },
                 "age": "AGE07X",
                 "race_v0": "RACEX",
@@ -375,10 +581,30 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2006: {
                 "model": PopulationCharacteristics06,
                 "fields": {
-                    "DUPERSID", "AGE06X", "SEX", "RACEX", "PERWT06F", "INSCOV06","PRVEV06", "TRIEV06", 
-                    "MCDEV06", "MCREV06", "OPAEV06", "OPBEV06", "UNINS06", "DVTEXP06", 
-                    "ERTEXP06", "HHAEXP06", "HHNEXP06", "IPTEXP06", "OBVEXP06", "OPTEXP06",  "OTHEXP06", "RXEXP06",
-                    "VISEXP06", "TOTEXP06" 
+                    "DUPERSID",
+                    "AGE06X",
+                    "SEX",
+                    "RACEX",
+                    "PERWT06F",
+                    "INSCOV06",
+                    "PRVEV06",
+                    "TRIEV06",
+                    "MCDEV06",
+                    "MCREV06",
+                    "OPAEV06",
+                    "OPBEV06",
+                    "UNINS06",
+                    "DVTEXP06",
+                    "ERTEXP06",
+                    "HHAEXP06",
+                    "HHNEXP06",
+                    "IPTEXP06",
+                    "OBVEXP06",
+                    "OPTEXP06",
+                    "OTHEXP06",
+                    "RXEXP06",
+                    "VISEXP06",
+                    "TOTEXP06",
                 },
                 "age": "AGE06X",
                 "race_v0": "RACEX",
@@ -408,10 +634,30 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             2005: {
                 "model": PopulationCharacteristics05,
                 "fields": {
-                    "DUPERSID", "AGE05X", "SEX", "RACEX", "PERWT05F", "INSCOV05","PRVEV05", "TRIEV05", 
-                    "MCDEV05", "MCREV05", "OPAEV05", "OPBEV05", "UNINS05", "DVTEXP05", 
-                    "ERTEXP05", "HHAEXP05", "HHNEXP05", "IPTEXP05", "OBVEXP05", "OPTEXP05", "OTHEXP05", "RXEXP05",
-                    "VISEXP05", "TOTEXP05" 
+                    "DUPERSID",
+                    "AGE05X",
+                    "SEX",
+                    "RACEX",
+                    "PERWT05F",
+                    "INSCOV05",
+                    "PRVEV05",
+                    "TRIEV05",
+                    "MCDEV05",
+                    "MCREV05",
+                    "OPAEV05",
+                    "OPBEV05",
+                    "UNINS05",
+                    "DVTEXP05",
+                    "ERTEXP05",
+                    "HHAEXP05",
+                    "HHNEXP05",
+                    "IPTEXP05",
+                    "OBVEXP05",
+                    "OPTEXP05",
+                    "OTHEXP05",
+                    "RXEXP05",
+                    "VISEXP05",
+                    "TOTEXP05",
                 },
                 "age": "AGE05X",
                 "race_v0": "RACEX",
@@ -475,14 +721,14 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             "3": "UNINSURED",
         }
         self.COVERAGE_SPECIFIC = {
-            "1": "<65 ANY PRIVATE",	
-            "2": "<65 PUBLIC ONLY",	
-            "3": "<65 UNINSURED",	
-            "4": "65+ EDITED MEDICARE ONLY",	
-            "5": "65+ EDITED MEDICARE AND PRIVATE",	
-            "6": "65+ EDITED MEDICARE AND OTH PUB ONLY",	
+            "1": "<65 ANY PRIVATE",
+            "2": "<65 PUBLIC ONLY",
+            "3": "<65 UNINSURED",
+            "4": "65+ EDITED MEDICARE ONLY",
+            "5": "65+ EDITED MEDICARE AND PRIVATE",
+            "6": "65+ EDITED MEDICARE AND OTH PUB ONLY",
             "7": "65+ UNINSURED",
-            "8": "65+ NO MEDICARE AND ANY PUBLIC/PRIVATE",	
+            "8": "65+ NO MEDICARE AND ANY PUBLIC/PRIVATE",
         }
 
     def run(self):
@@ -560,12 +806,11 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "other_medical_expenditures": float(other_medical_expenditures),
                     "prescription_medicine_expenditures": float(prescription_medicine_expenditures),
                     "vision_expenditures": float(vision_expenditures),
-                    "total_expenditures": float(total_expenditures),     
+                    "total_expenditures": float(total_expenditures),
                 }
             }
-        
-        return population
 
+        return population
 
     def calculate_insurance_cov_specific(self, data):
         """ 
@@ -602,41 +847,32 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             and data.get(self.PC_LOOKUPS[self.year]["uninsured"]) == "2"
         ):
             return "4"
-        
+
         # calculate medicare and private
-        if (
-            data.get(self.PC_LOOKUPS[self.year]["ever_had_medicare"]) == "1"
-            and (
-                data.get(self.PC_LOOKUPS[self.year]["ever_had_private"]) == "1"
-                or data.get(self.PC_LOOKUPS[self.year]["ever_had_tricare"]) == "1"
-            )
+        if data.get(self.PC_LOOKUPS[self.year]["ever_had_medicare"]) == "1" and (
+            data.get(self.PC_LOOKUPS[self.year]["ever_had_private"]) == "1"
+            or data.get(self.PC_LOOKUPS[self.year]["ever_had_tricare"]) == "1"
         ):
             return "5"
 
         # calculate medicare and public
-        if (
-            data.get(self.PC_LOOKUPS[self.year]["ever_had_medicare"]) == "1"
-            and (
-                data.get(self.PC_LOOKUPS[self.year]["ever_had_medicaid"]) == "1"
-                or data.get(self.PC_LOOKUPS[self.year]["ever_had_public_a"]) == "1"
-                or data.get(self.PC_LOOKUPS[self.year]["ever_had_public_b"]) == "1"
-            )
+        if data.get(self.PC_LOOKUPS[self.year]["ever_had_medicare"]) == "1" and (
+            data.get(self.PC_LOOKUPS[self.year]["ever_had_medicaid"]) == "1"
+            or data.get(self.PC_LOOKUPS[self.year]["ever_had_public_a"]) == "1"
+            or data.get(self.PC_LOOKUPS[self.year]["ever_had_public_b"]) == "1"
         ):
             return "6"
-        
+
         # calculate uninsured
         if data.get(self.PC_LOOKUPS[self.year]["uninsured"]) == "1":
             return "7"
-        
-        # calculate no medicare and any private or public 
-        if (
-            data.get(self.PC_LOOKUPS[self.year]["ever_had_medicare"]) == "2"
-            and (
-                data.get(self.PC_LOOKUPS[self.year]["ever_had_private"]) == "1"
-                or data.get(self.PC_LOOKUPS[self.year]["ever_had_tricare"]) == "1"
-                or data.get(self.PC_LOOKUPS[self.year]["ever_had_medicaid"]) == "1"
-                or data.get(self.PC_LOOKUPS[self.year]["ever_had_public_a"]) == "1"
-                or data.get(self.PC_LOOKUPS[self.year]["ever_had_public_b"]) == "1"
-            )
+
+        # calculate no medicare and any private or public
+        if data.get(self.PC_LOOKUPS[self.year]["ever_had_medicare"]) == "2" and (
+            data.get(self.PC_LOOKUPS[self.year]["ever_had_private"]) == "1"
+            or data.get(self.PC_LOOKUPS[self.year]["ever_had_tricare"]) == "1"
+            or data.get(self.PC_LOOKUPS[self.year]["ever_had_medicaid"]) == "1"
+            or data.get(self.PC_LOOKUPS[self.year]["ever_had_public_a"]) == "1"
+            or data.get(self.PC_LOOKUPS[self.year]["ever_had_public_b"]) == "1"
         ):
             return "8"
