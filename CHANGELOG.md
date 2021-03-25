@@ -16,6 +16,7 @@ Features
 - Made server admin page accessible
 - Removed Full Year Consolidated Data File assets, as it's superceeded by PopulationCharacteristics
 - Built Simple Timeline Generator
+- Built ExpensesAnalyzer support class
 
 Updates:
 
@@ -27,4 +28,8 @@ Fixes:
 
 Deployment Instructions:
 
-- none
+- For initial setup run the following
+- `python manage.py scrap_meps`
+- `python manage.py makemigrations`
+- `python manage.py migrate`
+- `python manage.py populate_models`

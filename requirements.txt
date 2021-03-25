@@ -12,6 +12,7 @@ selenium==3.141.0 # launches and controls a web browser.
 # Analytics Packages
 numpy==1.18.5  # scientific compunting support
 pandas==1.0.5 # data analysis library
+cpi==0.1.16 # adjust for inflation
 
 # Graphing Packages
 seaborn==0.10.01 # graphing support
