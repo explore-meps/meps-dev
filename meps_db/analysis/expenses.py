@@ -218,6 +218,50 @@ class ExpensesAnalyzer:
 
         return expenses_insurance
 
+    def calculate_quantile_expenses(self):
+        """ For the entire population, for each year calculates the total cumulative expenditures (in billions) and
+        percent of total expenditures for all quantiles divisible by 10, in addition to the 75th, 95th and 99th
+        quantile. Returns as a list of dictionaries. """
+
+        quantile_expenses = []
+
+        for year, population_characteristics in self.all_population_characteristics.items():
+            year_expenditures, year_weights = [], []
+            for resp_dict in population_characteristics.values():
+                year_expenditures.append(resp_dict["characteristics"]["total_expenditures"])
+                year_weights.append(resp_dict["characteristics"]["weight"])
+            
+            year_total_expenditures = sum([val * weight for val, weight in zip(year_expenditures, year_weights)])
+
+            weighted_quantiles_dict = self.weighted_quantiles(
+                values=year_expenditures, 
+                quantiles=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.75, 0.8, 0.9, 0.95, 0.99, 1], 
+                sample_weight=year_weights
+            )
+
+            for quantile, val in weighted_quantiles_dict.items():
+                quantile_member_exp, quantile_member_weights = [], []
+                for exp, weight in zip(year_expenditures, year_weights):
+                    if exp<=val:
+                        quantile_member_exp.append(exp)
+                        quantile_member_weights.append(weight)
+                
+                quantile_expenditures = sum(
+                    [val * weight for val, weight in zip(quantile_member_exp, quantile_member_weights)]
+                )
+
+                quantile_expenses.append(
+                    {
+                        "year": year,
+                        "quantile": quantile,
+                        "cum_pct_exp": quantile_expenditures/year_total_expenditures*100,
+                        "total_exp": cpi.inflate(quantile_expenditures/1000000000, year, to=self.max_year)
+                    }
+                )
+
+        return quantile_expenses
+
+
     @staticmethod
     def weighted_pct(bool_list, weights):
         """ Takes a list of boolean values and a list of weights associated by index. Returns the percent of the
@@ -259,3 +303,28 @@ class ExpensesAnalyzer:
             else:
                 w_median = s_data[idx + 1]
         return w_median
+
+    @staticmethod 
+    def weighted_quantiles(values, quantiles, sample_weight=None):
+        """ Takes an list of values, a list of quantiles to generate, and a list of weights corresponding to values.
+        Identifies the value splitting the quantile within the weighted distribution. Returns a dictionary of quantiles
+        and their associated values. """
+        
+        values = np.array(values)
+        quantiles = np.array(quantiles)
+        if sample_weight is None:
+            sample_weight = np.ones(len(values))
+        sample_weight = np.array(sample_weight)
+        
+        assert np.all(quantiles >= 0) and np.all(quantiles <= 1), \
+            'quantiles should be in [0, 1]'
+
+        sorter = np.argsort(values)
+        values = values[sorter]
+        sample_weight = sample_weight[sorter]
+
+        weighted_quantiles = np.cumsum(sample_weight) - 0.5 * sample_weight
+        weighted_quantiles /= np.sum(sample_weight)
+        quantile_values = np.interp(quantiles, weighted_quantiles, values)
+        
+        return {quan: val for quan, val in zip(quantiles, quantile_values)}
