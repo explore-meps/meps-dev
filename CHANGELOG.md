@@ -17,6 +17,7 @@ Features
 - Removed Full Year Consolidated Data File assets, as it's superceeded by PopulationCharacteristics
 - Built Simple Timeline Generator
 - Built ExpensesAnalyzer support class
+- Updated ExpensesAnalyzer to track cumulative distributions based on quantiles
 
 Updates:
 
