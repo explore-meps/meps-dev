@@ -1,9 +1,7 @@
-import numpy as np
-
 import cpi
 
 from meps_db.processors.encoders.population_characteristics_encoder import PopulationCharacteristicsEncoder
-
+from meps_db.utilities.universal_utilities import UniversalUtilityFunctions as uuf
 
 class ExpensesAnalyzer:
     """ Analysis class for downstream research. Processes data from the PopulationCharacteristics table and event
@@ -79,7 +77,7 @@ class ExpensesAnalyzer:
                             "year": year,
                             "services": service_name,
                             "age_group": age_group,
-                            "pct_with_expenses": self.weighted_pct(bool_list=values, weights=weights),
+                            "pct_with_expenses": uuf.weighted_pct(bool_list=values, weights=weights),
                         }
                     )
         return any_expense
@@ -126,10 +124,10 @@ class ExpensesAnalyzer:
                             "services": service_name,
                             "age_group": age_group,
                             "mean": cpi.inflate(
-                                self.weighted_average(values_list=values, weights=weights), year, to=self.max_year
+                                uuf.weighted_average(values_list=values, weights=weights), year, to=self.max_year
                             ),
                             "median": cpi.inflate(
-                                self.weighted_median(data=values, weights=weights), year, to=self.max_year
+                                uuf.weighted_median(values_list=values, weights=weights), year, to=self.max_year
                             ),
                         }
                     )
@@ -208,10 +206,10 @@ class ExpensesAnalyzer:
                         "insurance_status": insurance_status,
                         "age_group": age_group,
                         "mean": cpi.inflate(
-                            self.weighted_average(values_list=vals, weights=weights), year, to=self.max_year
+                            uuf.weighted_average(values_list=vals, weights=weights), year, to=self.max_year
                         ),
                         "median": cpi.inflate(
-                            self.weighted_median(data=vals, weights=weights), year, to=self.max_year
+                            uuf.weighted_median(values_list=vals, weights=weights), year, to=self.max_year
                         ),
                     }
                 )
@@ -233,8 +231,8 @@ class ExpensesAnalyzer:
 
             year_total_expenditures = sum([val * weight for val, weight in zip(year_expenditures, year_weights)])
 
-            weighted_quantiles_dict = self.weighted_quantiles(
-                values=year_expenditures,
+            weighted_quantiles_dict = uuf.weighted_quantiles(
+                values_list=year_expenditures,
                 quantiles=[0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.75, 0.8, 0.9, 0.95, 0.99, 1],
                 sample_weight=year_weights,
             )
@@ -259,69 +257,3 @@ class ExpensesAnalyzer:
                 )
 
         return quantile_expenses
-
-    @staticmethod
-    def weighted_pct(bool_list, weights):
-        """ Takes a list of boolean values and a list of weights associated by index. Returns the percent of the
-        weighted population listed a True in the boolean list. """
-
-        numerator = 0
-        for val, weight in zip(bool_list, weights):
-            numerator += val * weight
-        denominator = sum(weights)
-
-        return numerator / denominator * 100
-
-    @staticmethod
-    def weighted_average(values_list, weights):
-        """ Takes a list of values and a list of weights associated by index. Returns the weighted average of the 
-        values. """
-
-        numerator = 0
-        for val, weight in zip(values_list, weights):
-            numerator += val * weight
-        denominator = sum(weights)
-
-        return numerator / denominator
-
-    @staticmethod
-    def weighted_median(data, weights):
-        """ Takes a list of values and a list of weights associated by index. Returns the weighted median of the 
-        values. """
-        data, weights = np.array(data).squeeze(), np.array(weights).squeeze()
-        s_data, s_weights = map(np.array, zip(*sorted(zip(data, weights))))
-        midpoint = 0.5 * sum(s_weights)
-        if any(weights > midpoint):
-            w_median = (data[weights == np.max(weights)])[0]
-        else:
-            cs_weights = np.cumsum(s_weights)
-            idx = np.where(cs_weights <= midpoint)[0][-1]
-            if cs_weights[idx] == midpoint:
-                w_median = np.mean(s_data[idx : idx + 2])
-            else:
-                w_median = s_data[idx + 1]
-        return w_median
-
-    @staticmethod
-    def weighted_quantiles(values, quantiles, sample_weight=None):
-        """ Takes an list of values, a list of quantiles to generate, and a list of weights corresponding to values.
-        Identifies the value splitting the quantile within the weighted distribution. Returns a dictionary of quantiles
-        and their associated values. """
-
-        values = np.array(values)
-        quantiles = np.array(quantiles)
-        if sample_weight is None:
-            sample_weight = np.ones(len(values))
-        sample_weight = np.array(sample_weight)
-
-        assert np.all(quantiles >= 0) and np.all(quantiles <= 1), "quantiles should be in [0, 1]"
-
-        sorter = np.argsort(values)
-        values = values[sorter]
-        sample_weight = sample_weight[sorter]
-
-        weighted_quantiles = np.cumsum(sample_weight) - 0.5 * sample_weight
-        weighted_quantiles /= np.sum(sample_weight)
-        quantile_values = np.interp(quantiles, weighted_quantiles, values)
-
-        return {quan: val for quan, val in zip(quantiles, quantile_values)}

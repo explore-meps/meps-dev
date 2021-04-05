@@ -2,6 +2,8 @@ import json
 import os
 import pickle
 
+import numpy as np
+
 
 class UniversalUtilityFunctions:
     """ Class that contains utility functions used throughout codebase. Set up as class for easier use of mock
@@ -60,3 +62,69 @@ class UniversalUtilityFunctions:
         file_writer.close()
         if verbosity > 2:
             print(f"     {full_path} saved.")
+
+    @staticmethod
+    def weighted_pct(bool_list, weights):
+        """ Takes a list of boolean values and a list of weights associated by index. Returns the percent of the
+        weighted population listed a True in the boolean list. """
+
+        numerator = 0
+        for val, weight in zip(bool_list, weights):
+            numerator += val * weight
+        denominator = sum(weights)
+
+        return numerator / denominator * 100
+
+    @staticmethod
+    def weighted_average(values_list, weights):
+        """ Takes a list of values and a list of weights associated by index. Returns the weighted average of the 
+        values. """
+
+        numerator = 0
+        for val, weight in zip(values_list, weights):
+            numerator += val * weight
+        denominator = sum(weights)
+
+        return numerator / denominator
+
+    @staticmethod
+    def weighted_median(values_list, weights):
+        """ Takes a list of values and a list of weights associated by index. Returns the weighted median of the 
+        values. """
+        values_list, weights = np.array(values_list).squeeze(), np.array(weights).squeeze()
+        s_values_list, s_weights = map(np.array, zip(*sorted(zip(values_list, weights))))
+        midpoint = 0.5 * sum(s_weights)
+        if any(weights > midpoint):
+            w_median = (values_list[weights == np.max(weights)])[0]
+        else:
+            cs_weights = np.cumsum(s_weights)
+            idx = np.where(cs_weights <= midpoint)[0][-1]
+            if cs_weights[idx] == midpoint:
+                w_median = np.mean(s_values_list[idx : idx + 2])
+            else:
+                w_median = s_values_list[idx + 1]
+        return w_median
+
+    @staticmethod
+    def weighted_quantiles(values_list, quantiles, sample_weight=None):
+        """ Takes an list of values, a list of quantiles to generate, and a list of weights corresponding to values.
+        Identifies the value splitting the quantile within the weighted distribution. Returns a dictionary of quantiles
+        and their associated values. """
+
+        values_list = np.array(values_list)
+        quantiles = np.array(quantiles)
+        if sample_weight is None:
+            sample_weight = np.ones(len(values_list))
+        sample_weight = np.array(sample_weight)
+
+        assert np.all(quantiles >= 0) and np.all(quantiles <= 1), "quantiles should be in [0, 1]"
+
+        sorter = np.argsort(values_list)
+        values_list = values_list[sorter]
+        sample_weight = sample_weight[sorter]
+
+        weighted_quantiles = np.cumsum(sample_weight) - 0.5 * sample_weight
+        weighted_quantiles /= np.sum(sample_weight)
+        quantile_values = np.interp(quantiles, weighted_quantiles, values_list)
+
+        return {quan: val for quan, val in zip(quantiles, quantile_values)}

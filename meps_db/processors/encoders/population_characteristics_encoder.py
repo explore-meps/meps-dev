@@ -43,6 +43,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "PERWT18F",
                     "INSCOV18",
                     "INSURC18",
+                    "HAVEUS42",
                     "DVTEXP18",
                     "ERTEXP18",
                     "HHAEXP18",
@@ -53,7 +54,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "OTHEXP18",
                     "RXEXP18",
                     "VISEXP18",
-                    "TOTEXP18",
+                    "TOTEXP18", 
                 },
                 "age": "AGE18X",
                 "race_v0": None,
@@ -61,7 +62,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                 "race_v2": "RACEV2X",
                 "weight": "PERWT18F",
                 "insurance_coverage_general": "INSCOV18",
-                "insurance_coverage_specific": "INSURC18",
+                "insurance_coverage_specific": "INSURC18",               
                 "dental_expenditures": "DVTEXP18",
                 "emergency_room_expenditures": "ERTEXP18",
                 "home_health_agency_expenditures": "HHAEXP18",
@@ -85,6 +86,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "PERWT17F",
                     "INSCOV17",
                     "INSURC17",
+                    "HAVEUS42",
                     "DVTEXP17",
                     "ERTEXP17",
                     "HHAEXP17",
@@ -103,7 +105,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                 "race_v2": "RACEV2X",
                 "weight": "PERWT17F",
                 "insurance_coverage_general": "INSCOV17",
-                "insurance_coverage_specific": "INSURC17",
+                "insurance_coverage_specific": "INSURC17",                
                 "dental_expenditures": "DVTEXP17",
                 "emergency_room_expenditures": "ERTEXP17",
                 "home_health_agency_expenditures": "HHAEXP17",
@@ -124,6 +126,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "SEX",
                     "RACEV1X",
                     "RACEV2X",
+                    "HAVEUS42",
                     "PERWT16F",
                     "INSCOV16",
                     "INSURC16",
@@ -166,6 +169,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "SEX",
                     "RACEV1X",
                     "RACEV2X",
+                    "HAVEUS42",
                     "PERWT15F",
                     "INSCOV15",
                     "INSURC15",
@@ -208,6 +212,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "SEX",
                     "RACEV1X",
                     "RACEV2X",
+                    "HAVEUS42",
                     "PERWT14F",
                     "INSCOV14",
                     "INSURC14",
@@ -250,6 +255,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "SEX",
                     "RACEV1X",
                     "RACEV2X",
+                    "HAVEUS42",
                     "PERWT13F",
                     "INSCOV13",
                     "INSURC13",
@@ -292,6 +298,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "SEX",
                     "RACEV1X",
                     "PERWT12F",
+                    "HAVEUS42",
                     "INSCOV12",
                     "INSURC12",
                     "DVTEXP12",
@@ -312,7 +319,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                 "race_v2": None,
                 "weight": "PERWT12F",
                 "insurance_coverage_general": "INSCOV12",
-                "insurance_coverage_specific": "INSURC12",
+                "insurance_coverage_specific": "INSURC12",                
                 "dental_expenditures": "DVTEXP12",
                 "emergency_room_expenditures": "ERTEXP12",
                 "home_health_agency_expenditures": "HHAEXP12",
@@ -333,6 +340,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "SEX",
                     "RACEX",
                     "PERWT11F",
+                    "HAVEUS42",
                     "INSCOV11",
                     "INSURC11",
                     "DVTEXP11",
@@ -382,6 +390,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "MCREV10",
                     "OPAEV10",
                     "OPBEV10",
+                    "HAVEUS42",
                     "UNINS10",
                     "ERTEXP10",
                     "HHAEXP10",
@@ -435,6 +444,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "OPAEV09",
                     "OPBEV09",
                     "UNINS09",
+                    "HAVEUS42",
                     "DVTEXP09",
                     "ERTEXP09",
                     "HHAEXP09",
@@ -488,6 +498,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "OPAEV08",
                     "OPBEV08",
                     "UNINS08",
+                    "HAVEUS42",
                     "DVTEXP08",
                     "ERTEXP08",
                     "HHAEXP08",
@@ -541,6 +552,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "OPAEV07",
                     "OPBEV07",
                     "UNINS07",
+                    "HAVEUS42",
                     "DVTEXP07",
                     "ERTEXP07",
                     "HHAEXP07",
@@ -594,6 +606,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "OPAEV06",
                     "OPBEV06",
                     "UNINS06",
+                    "HAVEUS42",
                     "DVTEXP06",
                     "ERTEXP06",
                     "HHAEXP06",
@@ -647,6 +660,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "OPAEV05",
                     "OPBEV05",
                     "UNINS05",
+                    "HAVEUS42",
                     "DVTEXP05",
                     "ERTEXP05",
                     "HHAEXP05",
@@ -715,6 +729,9 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
         }
 
         self.SEX_ENCODER = {"1": "MALE", "2": "FEMALE"}
+
+        self.HAVE_USC_ENCODER = {"1": "YES", "01": "YES", "2": "NO", "02": "NO" }
+
         self.COVERAGE_GENERAL = {
             "1": "ANY PRIVATE",
             "2": "PUBLIC ONLY",
@@ -769,6 +786,8 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
             race_v1 = data.get(self.PC_LOOKUPS[self.year]["race_v1"], None)
             race_v2 = data.get(self.PC_LOOKUPS[self.year]["race_v2"], None)
 
+            have_usc = data.get("HAVEUS42", None)
+
             insurance_coverage_general = data.get(self.PC_LOOKUPS[self.year]["insurance_coverage_general"], None)
             insurance_coverage_specific = self.calculate_insurance_cov_specific(data=data)
 
@@ -794,6 +813,7 @@ class PopulationCharacteristicsEncoder(BaseEncoder):
                     "race_v0": self.RACE_V0_ENCODER.get(race_v0),
                     "race_v1": self.RACE_V1_ENCODER.get(race_v1),
                     "race_v2": self.RACE_V2_ENCODER.get(race_v2),
+                    "have_usc": self.HAVE_USC_ENCODER.get(have_usc),
                     "insurance_coverage_general": self.COVERAGE_GENERAL.get(insurance_coverage_general),
                     "insurance_coverage_specific": self.COVERAGE_SPECIFIC.get(insurance_coverage_specific),
                     "dental_expenditures": float(dental_expenditures),
